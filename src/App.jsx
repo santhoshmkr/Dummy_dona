@@ -1,5 +1,5 @@
 // import { MergedForm } from './pages/Dummy'
-import {MergedForm} from './pages/Tami'
+import {MergedForm} from './pages/Dummy'
 import './App.css'
 
 function App() {

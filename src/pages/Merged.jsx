@@ -23,6 +23,12 @@ const initialData = {
       DrivingLicence: { English: "", Tamil: "" },
     },
     identificationMarks: [{ English: "", Tamil: "" }],
+    Hospital_Details:{
+      Hospital_Name:"",
+      Doctor_Name_Nephrology:"",
+      Doctor_Name_urology:"",
+      Doctor_Name_MD:""
+    }
   },
   Doner_Dependent: {
     name: { English: "", Tamil: "" },
@@ -68,8 +74,8 @@ const initialData = {
   },
 };
 
-// Form fields configuration
-const formFields = [
+// Form fields configuration for English
+const englishFormFields = [
   { label: "Full Name", name: "name", type: "text" },
   { label: "Gender", name: "gender", type: "select", options: ["Male", "Female", "Other"] },
   { label: "Relationship", name: "relationship", type: "select", options: ["Father of", "Mother of", "Brother of", "Sister of", "Husband of", "Wife of", "Son of", "Daughter of"] },
@@ -82,6 +88,23 @@ const formFields = [
   { label: "Aadhar Number", name: "aadharNumber", type: "text" },
   { label: "City", name: "city", type: "text" },
 ];
+
+// Form fields configuration for Tamil (simplified)
+const tamilFormFields = [
+  { label: "முழு பெயர்", name: "name", type: "text" },
+  { label: "பாலினம்", name: "gender", type: "select", options: ["ஆண்", "பெண்", "மற்றவை"] },
+  { label: "பிறந்த தேதி", name: "dateOfBirth", type: "date" },
+  { label: "வயது", name: "age", type: "number" },
+  { label: "நகரம்", name: "city", type: "text" },
+];
+
+const DocterDataFields=[
+  { label: "Hospital Name", name: "Hospital_Name", type: "text" },
+  { label: "Doctor Name(Nephrology)", name: "Doctor_Name(Nephrology)", type: "text" },
+  { label: "Doctor Name(Urology)", name: "Doctor_Name(Urology)", type: "text" },
+  { label: "Doctor Name(Managing Director)", name: "Doctor_Name(Managing Director)", type: "text" },
+ 
+]
 
 // Tabs configuration
 const tabs = ["Doner", "Doner_Dependent", "Recipient"];
@@ -153,7 +176,6 @@ export const MergedForm = () => {
         },
       }));
       console.log("File uploaded successfully:", fileUrl);
-      
     } catch (error) {
       console.error("Error uploading file to Cloudinary:", error);
     }
@@ -251,10 +273,11 @@ export const MergedForm = () => {
     }
   }, [activeLanguage, activeTab]);
 
-  const renderFormFields = useMemo(() => (
-    formFields.map(({ label, name, type, options }) => (
+  const renderFormFields = useMemo(() => {
+    const fields = activeLanguage === "English" ? englishFormFields : tamilFormFields;
+    return fields.map(({ label, name, type, options }) => (
       <div key={name} className="flex flex-col p-2">
-        <label className="text-sm mb-1">{label}</label>
+        <label className="text-sm mb-1">{label} <span className="text-red-500">*</span></label>
         {type === "select" ? (
           <select
             name={name}
@@ -278,8 +301,13 @@ export const MergedForm = () => {
           />
         )}
       </div>
-    ))
-  ), [getCurrentData, handleInputChange, activeLanguage]);
+    ));
+  }, [getCurrentData, handleInputChange, activeLanguage]);
+
+  const handleDoctorData=(e)=>{
+    e.preventDefault();
+
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -401,6 +429,39 @@ export const MergedForm = () => {
             </button>
           </div>
         </div>
+       {
+        activeLanguage==="English"&&activeTab==="Doner"? <div className="flex flex-wrap gap-[1rem]">
+        <div className="flex flex-col">
+          <label htmlFor="Hos_name" className="text-sm mb-1">Hospital Name</label>
+          <input type="text" id="Hos_name" className="border rounded-md p-2" />
+        </div>
+        <div className="flex flex-col">
+          <label htmlFor="Doc_name_neuro" className="text-sm mb-1">Doctor Name(Nephrology)</label>
+          <input type="text" id="Doc_name_neuro" className="border rounded-md p-2" />
+        </div>
+        <div className="flex flex-col">
+          <label htmlFor="Doc_name_Uro" className="text-sm mb-1">Doctor Name(Urology)</label>
+          <input type="text" id="Doc_name_Uro" className="border rounded-md p-2" />
+        </div>
+        <div className="flex flex-col">
+          <label htmlFor="Doc_name_ManageDir" className="text-sm mb-1">Doctor Name(Managing Director)</label>
+          <input type="text" id="Doc_name_ManageDir" className="border rounded-md p-2" />
+        </div>
+      </div>:<></>
+       }
+<div className="flex flex-wrap justify-between w-full">
+       {
+        DocterDataFields.map((item)=>(
+          
+          
+            <div className="flex flex-col w-full md:1/2 sm:w-1/4">
+              <label htmlFor={item.label} className="text-sm mb-1">{item.label}</label>
+              <input type={item.type} name={item.name} className="border rounded-md p-2  w-full "/>
+            </div>
+         
+        ))
+       }
+       </div>
       </form>
     </div>
   );

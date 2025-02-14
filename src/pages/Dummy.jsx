@@ -2,87 +2,66 @@ import React, { useState, useCallback, useMemo } from "react";
 
 // Initial data structure for all tabs
 const initialData = {
-  Doner: {
-    name: { English: "", Tamil: "" },
-    gender: { English: "", Tamil: "" },
-    relationship: { English: "", Tamil: "" },
-    relationshipPersonName: { English: "", Tamil: "" },
-    dateOfBirth: { English: "", Tamil: "" },
-    age: { English: "", Tamil: "" },
-    maritalStatus: { English: "", Tamil: "" },
-    rationNumber: { English: "", Tamil: "" },
-    panNumber: { English: "", Tamil: "" },
-    aadharNumber: { English: "", Tamil: "" },
-    city: { English: "", Tamil: "" },
-    presentAddress: { English: "", Tamil: "" },
-    permanentAddress: { English: "", Tamil: "" },
-    documents: {
-      aadharCard: { English: "", Tamil: "" },
-      panCard: { English: "", Tamil: "" },
-      rationCard: { English: "", Tamil: "" },
-    },
-    identificationMarks: [{ English: "", Tamil: "" }],
-  },
-  Doner_Dependent: {
-    name: { English: "", Tamil: "" },
-    gender: { English: "", Tamil: "" },
-    relationship: { English: "", Tamil: "" },
-    relationshipPersonName: { English: "", Tamil: "" },
-    dateOfBirth: { English: "", Tamil: "" },
-    age: { English: "", Tamil: "" },
-    maritalStatus: { English: "", Tamil: "" },
-    rationNumber: { English: "", Tamil: "" },
-    panNumber: { English: "", Tamil: "" },
-    aadharNumber: { English: "", Tamil: "" },
-    city: { English: "", Tamil: "" },
-    presentAddress: { English: "", Tamil: "" },
-    permanentAddress: { English: "", Tamil: "" },
-    documents: {
-      aadharCard: { English: "", Tamil: "" },
-      panCard: { English: "", Tamil: "" },
-      rationCard: { English: "", Tamil: "" },
-    },
-    identificationMarks: [{ English: "", Tamil: "" }],
-  },
-  Recipient: {
-    name: { English: "", Tamil: "" },
-    gender: { English: "", Tamil: "" },
-    relationship: { English: "", Tamil: "" },
-    relationshipPersonName: { English: "", Tamil: "" },
-    dateOfBirth: { English: "", Tamil: "" },
-    age: { English: "", Tamil: "" },
-    maritalStatus: { English: "", Tamil: "" },
-    rationNumber: { English: "", Tamil: "" },
-    panNumber: { English: "", Tamil: "" },
-    aadharNumber: { English: "", Tamil: "" },
-    city: { English: "", Tamil: "" },
-    presentAddress: { English: "", Tamil: "" },
-    permanentAddress: { English: "", Tamil: "" },
-    documents: {
-      aadharCard: { English: "", Tamil: "" },
-      panCard: { English: "", Tamil: "" },
-      rationCard: { English: "", Tamil: "" },
-    },
-    identificationMarks: [{ English: "", Tamil: "" }],
-  },
+  Doner: createInitialTabData(),
+  Doner_Dependent: createInitialTabData(),
+  Recipient: createInitialTabData(),
 };
 
-// Form fields configuration
-const formFields = [
-  { label: "Full Name", name: "name", type: "text" },
-  { label: "Gender", name: "gender", type: "select", options: ["Male", "Female", "Other"] },
-  { label: "Relationship", name: "relationship", type: "select", options: ["Father of", "Mother of", "Brother of", "Sister of", "Husband of", "Wife of", "Son of", "Daughter of"] },
-  { label: "Relationship Person Name", name: "relationshipPersonName", type: "text" },
-  { label: "Date of Birth", name: "dateOfBirth", type: "date" },
-  { label: "Age", name: "age", type: "number" },
-  { label: "Marital Status", name: "maritalStatus", type: "select", options: ["Single", "Married", "Divorced", "Widowed"] },
-  { label: "Ration Number", name: "rationNumber", type: "text" },
-  { label: "Pan Number", name: "panNumber", type: "text" },
-  { label: "Aadhar Number", name: "aadharNumber", type: "text" },
-  { label: "City", name: "city", type: "text" },
-];
+function createInitialTabData() {
+  return {
+    name: { English: "", Tamil: "" },
+    gender: { English: "", Tamil: "" },
+    relationship: { English: "", Tamil: "" },
+    relationshipPersonName: { English: "", Tamil: "" },
+    dateOfBirth: { English: "", Tamil: "" },
+    age: { English: "", Tamil: "" },
+    maritalStatus: { English: "", Tamil: "" },
+    rationNumber: { English: "", Tamil: "" },
+    panNumber: { English: "", Tamil: "" },
+    aadharNumber: { English: "", Tamil: "" },
+    city: { English: "", Tamil: "" },
+    presentAddress: { English: "", Tamil: "" },
+    permanentAddress: { English: "", Tamil: "" },
+    documents: {
+      aadharCard: { English: "", Tamil: "" },
+      panCard: { English: "", Tamil: "" },
+      rationCard: { English: "", Tamil: "" },
+      DrivingLicence: { English: "", Tamil: "" },
+    },
+    identificationMarks: [{ English: "", Tamil: "" }],
+    Hospital_Details: {
+      Hospital_Name: "",
+      Doctor_Name_Nephrology: "",
+      Doctor_Name_urology: "",
+      Doctor_Name_MD: "",
+    },
+  };
+}
 
-// Tabs configuration
+// Form fields configuration
+const formFields = {
+  English: [
+    { label: "Full Name", name: "name", type: "text" },
+    { label: "Gender", name: "gender", type: "select", options: ["Male", "Female", "Other"] },
+    { label: "Relationship", name: "relationship", type: "select", options: ["Father of", "Mother of", "Brother of", "Sister of", "Husband of", "Wife of", "Son of", "Daughter of"] },
+    { label: "Relationship Person Name", name: "relationshipPersonName", type: "text" },
+    { label: "Date of Birth", name: "dateOfBirth", type: "date" },
+    { label: "Age", name: "age", type: "number" },
+    { label: "Marital Status", name: "maritalStatus", type: "select", options: ["Single", "Married", "Divorced", "Widowed"] },
+    { label: "Ration Number", name: "rationNumber", type: "text" },
+    { label: "Pan Number", name: "panNumber", type: "text" },
+    { label: "Aadhar Number", name: "aadharNumber", type: "text" },
+    { label: "City", name: "city", type: "text" },
+  ],
+  Tamil: [
+    { label: "முழு பெயர்", name: "name", type: "text" },
+    { label: "பாலினம்", name: "gender", type: "select", options: ["ஆண்", "பெண்", "மற்றவை"] },
+    { label: "பிறந்த தேதி", name: "dateOfBirth", type: "date" },
+    { label: "வயது", name: "age", type: "number" },
+    { label: "நகரம்", name: "city", type: "text" },
+  ],
+};
+
 const tabs = ["Doner", "Doner_Dependent", "Recipient"];
 
 export const MergedForm = () => {
@@ -90,13 +69,10 @@ export const MergedForm = () => {
   const [activeTab, setActiveTab] = useState("Doner");
   const [patientData, setPatientData] = useState({ English: initialData, Tamil: initialData });
   const [isPermanentAddressSame, setIsPermanentAddressSame] = useState(false);
+  const [selectedDocumentType, setSelectedDocumentType] = useState("");
 
-  // Helper function to get current data based on language and tab
-  const getCurrentData = useCallback(() => {
-    return patientData[activeLanguage][activeTab];
-  }, [activeLanguage, activeTab, patientData]);
+  const getCurrentData = useCallback(() => patientData[activeLanguage][activeTab], [activeLanguage, activeTab, patientData]);
 
-  // Handle input change for text, select, and date fields
   const handleInputChange = useCallback((e) => {
     const { name, value } = e.target;
     setPatientData((prev) => ({
@@ -114,23 +90,19 @@ export const MergedForm = () => {
     }));
   }, [activeLanguage, activeTab]);
 
-  // Handle file upload to Cloudinary
   const handleFileChange = useCallback(async (e) => {
     const file = e.target.files[0];
-    if (!file) return;
+    if (!file || !selectedDocumentType) return;
 
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("upload_preset", "rgpqdzui"); // Replace with your Cloudinary upload preset
+    formData.append("upload_preset", "rgpqdzui");
 
     try {
-      const response = await fetch(
-        `https://api.cloudinary.com/v1_1/dija60v2h/upload`,
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
+      const response = await fetch(`https://api.cloudinary.com/v1_1/dija60v2h/upload`, {
+        method: "POST",
+        body: formData,
+      });
 
       if (!response.ok) throw new Error("File upload failed");
 
@@ -145,21 +117,20 @@ export const MergedForm = () => {
             ...prev[activeLanguage][activeTab],
             documents: {
               ...prev[activeLanguage][activeTab].documents,
-              [e.target.name]: {
-                ...prev[activeLanguage][activeTab].documents[e.target.name],
+              [selectedDocumentType]: {
+                ...prev[activeLanguage][activeTab].documents[selectedDocumentType],
                 [activeLanguage]: fileUrl,
               },
             },
           },
         },
       }));
-      console.log("done")
+      console.log("File uploaded successfully:", fileUrl);
     } catch (error) {
       console.error("Error uploading file to Cloudinary:", error);
     }
-  }, [activeLanguage, activeTab]);
+  }, [activeLanguage, activeTab, selectedDocumentType]);
 
-  // Handle identification mark changes
   const handleIdentificationMarkChange = useCallback((index, value) => {
     setPatientData((prev) => {
       const updatedMarks = [...prev[activeLanguage][activeTab].identificationMarks];
@@ -177,7 +148,6 @@ export const MergedForm = () => {
     });
   }, [activeLanguage, activeTab]);
 
-  // Add a new identification mark
   const addIdentificationMark = useCallback(() => {
     setPatientData((prev) => ({
       ...prev,
@@ -194,8 +164,7 @@ export const MergedForm = () => {
     }));
   }, [activeLanguage, activeTab]);
 
-  // Handle present address change and update permanent address if checkbox is checked
-  const handlePresentAddressChange = useCallback((e) => {
+  const handleAddressChange = useCallback((e, isPermanent) => {
     const { value } = e.target;
     setPatientData((prev) => ({
       ...prev,
@@ -203,14 +172,13 @@ export const MergedForm = () => {
         ...prev[activeLanguage],
         [activeTab]: {
           ...prev[activeLanguage][activeTab],
-          presentAddress: {
-            ...prev[activeLanguage][activeTab].presentAddress,
+          [isPermanent ? 'permanentAddress' : 'presentAddress']: {
+            ...prev[activeLanguage][activeTab][isPermanent ? 'permanentAddress' : 'presentAddress'],
             [activeLanguage]: value,
           },
-          ...(isPermanentAddressSame && {
+          ...(isPermanentAddressSame && !isPermanent && {
             permanentAddress: {
               ...prev[activeLanguage][activeTab].presentAddress,
-              [activeLanguage]: value,
             },
           }),
         },
@@ -218,25 +186,6 @@ export const MergedForm = () => {
     }));
   }, [activeLanguage, activeTab, isPermanentAddressSame]);
 
-  // Handle permanent address change
-  const handlePermanentAddressChange = useCallback((e) => {
-    const { value } = e.target;
-    setPatientData((prev) => ({
-      ...prev,
-      [activeLanguage]: {
-        ...prev[activeLanguage],
-        [activeTab]: {
-          ...prev[activeLanguage][activeTab],
-          permanentAddress: {
-            ...prev[activeLanguage][activeTab].permanentAddress,
-            [activeLanguage]: value,
-          },
-        },
-      },
-    }));
-  }, [activeLanguage, activeTab]);
-
-  // Handle checkbox change for permanent address
   const handlePermanentAddressCheckboxChange = useCallback((e) => {
     const isChecked = e.target.checked;
     setIsPermanentAddressSame(isChecked);
@@ -256,11 +205,11 @@ export const MergedForm = () => {
     }
   }, [activeLanguage, activeTab]);
 
-  // Memoized form fields rendering
-  const renderFormFields = useMemo(() => (
-    formFields.map(({ label, name, type, options }) => (
+  const renderFormFields = useMemo(() => {
+    const fields = formFields[activeLanguage];
+    return fields.map(({ label, name, type, options }) => (
       <div key={name} className="flex flex-col p-2">
-        <label className="text-sm mb-1">{label}</label>
+        <label className="text-sm mb-1">{label} <span className="text-red-500">*</span></label>
         {type === "select" ? (
           <select
             name={name}
@@ -284,26 +233,24 @@ export const MergedForm = () => {
           />
         )}
       </div>
-    ))
-  ), [getCurrentData, handleInputChange, activeLanguage]);
+    ));
+  }, [getCurrentData, handleInputChange, activeLanguage]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(patientData);
   };
 
+ 
+
   return (
     <div className="w-full px-4 py-6 rounded border">
       <div className="flex justify-between flex-wrap">
         <h1 className="lg:text-2xl font-semibold mb-6 sm:text-lg">Add Patient Details</h1>
-        {/* Submit Button */}
-        <div className="flex justify-end px-2" onClick={handleSubmit}>
-          <button className="bg-blue-600 text-white lg:text-2xl sm:text-md px-6 py-2 rounded-md">
-            Submit
-          </button>
-        </div>
+        <button onClick={handleSubmit} className="bg-blue-600 text-white lg:text-2xl sm:text-md px-6 py-2 rounded-md">
+          Submit
+        </button>
       </div>
-      {/* Language and Tab Switcher */}
       <div className="border-b mb-6">
         <nav className="flex flex-col sm:flex-row justify-between">
           <div className="flex space-x-4 my-2">
@@ -314,7 +261,6 @@ export const MergedForm = () => {
               Tamil
             </button>
           </div>
-
           {activeLanguage === "English" && (
             <div className="flex space-x-4 my-2">
               {tabs.map((tab) => (
@@ -327,19 +273,17 @@ export const MergedForm = () => {
         </nav>
       </div>
 
-      {/* Form */}
-      <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+      <form className="space-y-6" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-2">
           {renderFormFields}
         </div>
 
-        {/* Address Section */}
         <div className="flex flex-col sm:flex-row gap-4 px-2">
           <div className="flex-1">
             <label className="block mb-2">Present Address</label>
             <textarea
               name="presentAddress"
-              onChange={handlePresentAddressChange}
+              onChange={(e) => handleAddressChange(e, false)}
               value={getCurrentData().presentAddress[activeLanguage]}
               className="w-full border rounded-md p-2 h-32"
             />
@@ -360,7 +304,7 @@ export const MergedForm = () => {
             <label className="block mb-2">Permanent Address</label>
             <textarea
               name="permanentAddress"
-              onChange={handlePermanentAddressChange}
+              onChange={(e) => handleAddressChange(e, true)}
               value={getCurrentData().permanentAddress[activeLanguage]}
               className="w-full border rounded-md p-2 h-32"
               disabled={isPermanentAddressSame}
@@ -368,13 +312,17 @@ export const MergedForm = () => {
           </div>
         </div>
 
-        {/* Document Upload Section */}
         <div className="px-2">
           <div className="flex flex-col sm:flex-row gap-4 items-start">
-            <select className="border rounded-md p-2 flex-1">
-              <option>Select Document Type</option>
-              <option>Aadhar Card</option>
-              <option>PAN Card</option>
+            <select 
+              className="border rounded-md p-2 flex-1"
+              onChange={(e) => setSelectedDocumentType(e.target.value)}
+            >
+              <option value="">Select Document Type</option>
+              <option value="aadharCard">Aadhar Card</option>
+              <option value="panCard">PAN Card</option>
+              <option value="rationCard">Ration Card</option>
+              <option value="DrivingLicence">Driving Licence</option>
             </select>
             <input
               type="file"
@@ -384,7 +332,6 @@ export const MergedForm = () => {
           </div>
         </div>
 
-        {/* Identification Marks Section */}
         <div className="px-2 flex flex-col align-start">
           <label className="block mb-2">Identification Marks</label>
           <div className="flex align-middle gap-[1rem] flex-wrap mx-auto">
@@ -408,6 +355,22 @@ export const MergedForm = () => {
             </button>
           </div>
         </div>
+
+        {activeLanguage === "English" && activeTab === "Doner" && (
+          <div className="flex flex-wrap gap-[1rem]">
+            {Object.entries(initialData.Doner.Hospital_Details).map(([key]) => (
+              <div key={key} className="flex flex-col">
+                <label className="text-sm mb-1">{key.replace(/_/g, ' ')}</label>
+                <input
+                  type="text"
+                  className="border rounded-md p-2"
+                  // value={getCurrentData().Hospital_Details[key]}
+                  onChange={(e) => handleInputChange({ target: { name: `Hospital_Details.${key}`, value: e.target.value } })}
+                />
+              </div>
+            ))}
+          </div>
+        )}
       </form>
     </div>
   );
