@@ -38,27 +38,26 @@ export const Home = () => {
 
 export const SideBar = () => {
   return (
-    <div>
-      <div className="flex space-y-4 flex-col">
+    <div className=" p-[1rem] flex  justify-between w-[100%]">
+      
         <Link
-          to="/"
-          className="hover:text-gray-300 transition-colors duration-200"
+          to="/Hospital_form"
+          className="hover:text-white  transition-colors duration-200"
         >
-          Home
+          Hospital
         </Link>
         <Link
           to="/Manage_form"
-          className="hover:text-gray-300 transition-colors duration-200"
+          className="hover:text-white transition-colors duration-200"
         >
           Mange forms
         </Link>
         <Link
           to="/Admin"
-          className="hover:text-gray-300 transition-colors duration-200"
+          className="hover:text-white  transition-colors duration-200"
         >
           Dashboard
         </Link>
-      </div>
     </div>
   );
 };
