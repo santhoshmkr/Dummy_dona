@@ -18,10 +18,30 @@ const HospitalForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Hospital Data Submitted:", hospitalData);
-    setHospitalData(intialData)
+   
+    try {
+      const response = await fetch('http://localhost:5000/api/hospital', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(hospitalData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+
+      const result = await response.json();
+      console.log('Form submitted successfully:', result);
+      setHospitalData(intialData); 
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+    
+
   };
 
   return (
