@@ -7,7 +7,7 @@ export const OrganDonationForm = () => {
     Name: "karuppu",
   });
 
-  const generateDocx = () => {
+  const Form_two = () => {
     const doc = new Document({
       sections: [
         {
@@ -772,7 +772,7 @@ export const OrganDonationForm = () => {
 
   return (
     <button
-      onClick={generateDocx}
+      onClick={Form_two}
       style={{ padding: "10px 20px", fontSize: "16px", margin: "20px" }}
     >
       Download Organ Donation Form
