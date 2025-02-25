@@ -36,13 +36,14 @@ import { SideBar } from "./component/Layout";
 import Patient from "./pages/Admin/Patient";
 import { ViewHospitalDetails } from "./pages/Admin/HospitalForm";
 import { UpdateHospitalForm } from "./pages/Admin/updateHospital";
+import { OrganDonationForm } from "./pages/Forms/Form_one";
 
 const App = () => {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<AppLayout />}>
-          <Route index element={<Home />} />
+          <Route index element={<OrganDonationForm />} />
           <Route path="Manage_form" element={<PatientForm />} />
           <Route path="Admin" element={<Patient />} />
           <Route path="Hospital_form" element={<HospitalForm />} />
