@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Document, Paragraph, TextRun, Packer, AlignmentType } from "docx";
+// import { Document, Paragraph, TextRun, Packer, AlignmentType,Table,TableRow,TableCell  } from "docx";
+import { Document, Packer,Paragraph, TextRun,AlignmentType,  } from "docx";
 import { saveAs } from "file-saver";
 
 export const OrganDonationForm = () => {
@@ -2999,6 +3000,1281 @@ export const OrganDonationForm = () => {
       saveAs(blob, "Donor_Dependent_Affidavit.docx");
     });
   };
+
+
+  const userData = {
+    patientName: "NARAYANA SING",
+    patientAge: "55",
+    patientGender: "Male",
+    patientAddress: "615, BAPU NAGAR. PALLI, MARWAR, RAJASTHAN",
+    condition: "Chronic Renal Failure",
+    organ: "kidney",
+    relationship: "FAMILY FRIEND",
+    donorName: "POONGODI",
+    donorAddress: "75/96, GANDHIPURAM 1ST STREET, PALLIPALAYAM, NAMAKKAL, TAMIL NADU - 638006",
+    hospitalName: "Star Kims Hospital",
+    hospitalAddress: "D6, 6th Cross, th Cross St W, Extension, Thillai Nagar, Tiruchirappalli, Tamil Nadu, 620018",
+    hospitalCity: "Tiruchirappalli",
+    doctorName: "Dr.Appan Prakash MD.,DM.,,(Nephro)",
+    doctorTitle: "Consultant & Urologist Transplant Surgeon– Renal Transplant",
+    nativeLanguage: "Tamil",
+    place: "Tiruchirappalli",
+    advocateName: "John Doe"
+  };
+  
+  
+  
+
+  // doner affidavit
+  const DonorAffidavit = (userData) => {
+    const doc = new Document({
+      sections: [
+        {
+          properties: {},
+          children: [
+            // Title
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "DONOR AFFIDAVIT",
+                  bold: true,
+                  size: 30,
+                }),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "     ",
+                  bold: true,
+                  size: 24,
+                }),
+              ],
+            }),
+  
+            // Affidavit Content
+            new Paragraph({
+              children: [
+                new TextRun("I, Ms. "),
+                new TextRun({
+                  text: userData.donorName,
+                  bold: true,
+                }),
+                new TextRun(" aged "),
+                new TextRun({
+                  text: userData.donorAge,
+                }),
+                new TextRun("/"),
+                new TextRun({
+                  text: userData.donorGender,
+                }),
+                new TextRun(", "),
+                new TextRun({
+                  text: userData.donorAddress,
+                  bold: true,
+                }),
+                new TextRun(" hereby truthfully and solemnly affirm to the following declaration"),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("1. I declare that I am the donor who is giving my full consent to donate one of my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s to my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(". I further submit that now I came to know that my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(" is suffering from chronic renal failure as both of his "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s have been destroyed by disease and the doctors’ advice that he is in urgent need of "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" transplantation. Doctors informed that a "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" can be transplanted from one person to another person through surgical operation in an attempt to save a patient of "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" failure. Doctors also informed that if any of the close relative could save him from danger. Since anyone can donate a suitable "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" out of affection to the patient, being he "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun("; I immediately expressed my willingness to donate one of my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s to my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(" to save him from danger and give him life."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("2. Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(" is now undergoing treatment at "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(", "),
+                new TextRun({
+                  text: userData.hospitalAddress,
+                  bold: true,
+                }),
+                new TextRun(" for the "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" failure. I am staying with my family at the aforesaid address "),
+                new TextRun({
+                  text: userData.donorAddress,
+                  bold: true,
+                }),
+                new TextRun(". On seeing the acute condition of my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(" and I voluntarily out of my own free will, and natural affection towards my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(". I decided to donate one of my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s to him only with an aim of saving him from danger. No one has compelled or forced me. Moreover, all the necessary "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" donation medical tests are carried out for me in the same hospital and the Doctors certified that I am suitable for donating one of my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s to my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(". I am not expecting any financial or other types of rewards for donating one of my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s to my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(". I have taken the decision myself to donate one of my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s to my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" without anybody’s encouragement or force. My "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" transplant operation is to be performed at "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(", "),
+                new TextRun({
+                  text: userData.hospitalAddress,
+                  bold: true,
+                }),
+                new TextRun("."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("3. I am a person of mature age and mind and out of compassion, I accepted to donate one of my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s out of my own free will and out of compassion to my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(". I also understand that the nature of risks involved in the operation for removal of one of my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s as well as the possible future permanent injury to my health and the risk that my remaining "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" may be subsequently become injured or diseased. I also declare that I am aware of the possibilities that such a "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" transplant operation may not be successful."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("4. I hereby declare that I, out of my own free will and accord and out of humanitarian consideration, I voluntarily agreed to donate one of my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s for transplantation into the body of the aforesaid Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(" in an effort to benefit of Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(". I wish to request and authorize the Doctors / Members of the "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(", their team of Doctors, Surgeons, Anesthetists, and to operate and / or assist in operating on me for the purpose of removal of one of my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s from my body and to transplant operation into the body of the aforesaid Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun("."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("5. If at the time of the operation, any condition is discovered that was not previously apparent and that in the judgment of operating surgeons call for any surgical operation in addition to or in substitution for those that are not initially contemplated. I authorize him to takeover whatever measures he may consider necessary."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("6. I hereby declare that I shall not hold the aforesaid my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(" or other person, or "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(" and all the Doctors, Surgeons, Anesthetists, operating on, responsible for any consequences arising from the removal of one my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s whether at present or in future."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("7. I am fully aware and conscious that the operation is at my own risk and hence I shall not hold "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(", or any Doctor of "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(", or any one responsible or make any one liable on account of the operation."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("8. I submit that I know "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" donation is a major surgery, which is done under general Anaesthesia. I know that like all other surgeries which are done under general Anaesthesia, "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" donation surgery also have usual risks and complications. I also understand that for normal physiological function of our body one "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" is enough. So, "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" donation is not a problem to lead a normal life in future. All these matters about the "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" donation including post-operative complications have been explained to me by the Doctors. After knowing all the post – operative risks, I give my full consent / No Objection to donate one of my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s to my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(" agree to this without any pressure."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("9. I, Ms. "),
+                new TextRun({
+                  text: userData.donorName,
+                  bold: true,
+                }),
+                new TextRun(" (Myself donor) and Mr. "),
+                new TextRun({
+                  text: userData.recipientName,
+                  bold: true,
+                }),
+                new TextRun(" (Patient) both of us are "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" & "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun("."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("The content of this affidavit was translated in the language ("),
+                new TextRun({
+                  text: userData.nativeLanguage,
+                  bold: true,
+                }),
+                new TextRun(") known to me and after understanding and accepting the whole contents. I set my signature to this solemn affidavit."),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "     ",
+                  bold: true,
+                  size: 24,
+                }),
+              ],
+            }),
+  
+            // Signatures
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("Signature of the Donor"),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "     ",
+                  bold: true,
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("Witnesses"),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("1."),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("2."),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "     ",
+                  bold: true,
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("The above facts are true"),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("Before me,"),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("Solemnly affirm at "),
+                new TextRun({
+                  text: userData.place,
+                  bold: true,
+                }),
+                new TextRun(" and"),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("Signed his Name in my presence"),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("Advocate, "),
+                new TextRun({
+                  text: userData.advocateName,
+                  bold: true,
+                }),
+              ],
+            }),
+          ],
+        },
+      ],
+    });
+  
+    Packer.toBlob(doc).then((blob) => {
+      saveAs(blob, "Donor_Affidavit.docx");
+    });
+  };
+
+  // Patient Affidavit
+  const PatientAffidavit = (userData) => {
+    const doc = new Document({
+      sections: [
+        {
+          properties: {},
+          children: [
+            // Title
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "PATIENT AFFIDAVIT",
+                  bold: true,
+                  size: 30,
+                }),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "     ",
+                  bold: true,
+                  size: 24,
+                }),
+              ],
+            }),
+  
+            // Affidavit Content
+            new Paragraph({
+              children: [
+                new TextRun("I, Mr. "),
+                new TextRun({
+                  text: userData.patientName,
+                  bold: true,
+                }),
+                new TextRun(" aged "),
+                new TextRun({
+                  text: userData.patientAge,
+                }),
+                new TextRun("/"),
+                new TextRun({
+                  text: userData.patientGender,
+                }),
+                new TextRun(", "),
+                new TextRun({
+                  text: userData.patientAddress,
+                  bold: true,
+                }),
+                new TextRun(" and taking treatment at "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(", "),
+                new TextRun({
+                  text: userData.hospitalAddress,
+                  bold: true,
+                }),
+                new TextRun(". do hereby solemnly and sincerely affirm and declare as follows:"),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("1. I declare that I am the patient who has been suffering from "),
+                new TextRun({
+                  text: userData.condition,
+                  bold: true,
+                }),
+                new TextRun(" as both of my "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s have been destroyed by disease and I was informed through doctors that I am in urgent need of "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" transplantation for my survival. I heard through Doctors that a "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" can be transplanted from one person to another through surgical operation in an attempt to save a patient of "),
+                new TextRun({
+                  text: userData.condition,
+                  bold: true,
+                }),
+                new TextRun(". Doctors also informed that if any of my close relatives donate a suitable "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" to me; my life could be saved from danger. On hearing about my "),
+                new TextRun({
+                  text: userData.condition,
+                  bold: true,
+                }),
+                new TextRun(", my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Ms. "),
+                new TextRun({
+                  text: userData.donorName,
+                  bold: true,
+                }),
+                new TextRun(", who permanently residing at "),
+                new TextRun({
+                  text: userData.donorAddress,
+                  bold: true,
+                }),
+                new TextRun(", immediately expressed his willingness to donate one of his "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s to me, as he is very much attached and affectionate towards me. He never hesitates to do any help to me. On seeing my acute condition, and hearing about my "),
+                new TextRun({
+                  text: userData.condition,
+                  bold: true,
+                }),
+                new TextRun(", "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Ms. "),
+                new TextRun({
+                  text: userData.donorName,
+                  bold: true,
+                }),
+                new TextRun(", was shocked and he voluntarily, out of his own will, decided to donate one of his "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s to me out of affection and deep attachment towards me, without any hesitation."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("2. His only aim is to save me from danger and give me life. No one has compelled or forced him to donate. There is no monetary consideration involved in this "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" donation."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("3. I further state that my permanent resident of "),
+                new TextRun({
+                  text: userData.patientAddress,
+                  bold: true,
+                }),
+                new TextRun(" for my "),
+                new TextRun({
+                  text: userData.condition,
+                  bold: true,
+                }),
+                new TextRun(" then all the necessary "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" donation medical tests are carried out for my relative in the same Hospital, and the Doctors certified that my "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Ms. "),
+                new TextRun({
+                  text: userData.donorName,
+                  bold: true,
+                }),
+                new TextRun(", who resides in "),
+                new TextRun({
+                  text: userData.donorAddress,
+                  bold: true,
+                }),
+                new TextRun(", is suitable for donating a "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" to me."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("4. My "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Ms. "),
+                new TextRun({
+                  text: userData.donorName,
+                  bold: true,
+                }),
+                new TextRun(", also came to know through Doctors the nature of risks involved in the operation for removal of one of his "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s as well as the possible future injury to his health and the risk that his remaining "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" may be subsequently become injured or diseased. He is also aware of the possibilities that such a "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" transplant operation may not be successful. Since he is a person of mature age and mind, out of compassion and on humanitarian grounds, he is voluntarily accepted to donate one of his "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s out of his own free will to me to save me from danger."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("5. He also understands that for normal physiological function of his body one "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" is enough. So, "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" donation is not a problem to lead a normal life in future. All above said details about the "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" donation including the post-operative complications have been explained by the Doctors to "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Ms. "),
+                new TextRun({
+                  text: userData.donorName,
+                  bold: true,
+                }),
+                new TextRun(", who resides in "),
+                new TextRun({
+                  text: userData.donorAddress,
+                  bold: true,
+                }),
+                new TextRun(", and after knowing all the post-operative risks, he gives his full consent. No objection to donate one of his "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s to me. I really feel proud of "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Ms. "),
+                new TextRun({
+                  text: userData.donorName,
+                  bold: true,
+                }),
+                new TextRun(", who resides in "),
+                new TextRun({
+                  text: userData.hospitalCity,
+                  bold: true,
+                }),
+                new TextRun(". I have made own arrangements with "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" Ms. "),
+                new TextRun({
+                  text: userData.donorName,
+                  bold: true,
+                }),
+                new TextRun(", who is residing the above address, enable to undergo the transplantation surgery. I am aware that neither the "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(", "),
+                new TextRun({
+                  text: userData.hospitalAddress,
+                  bold: true,
+                }),
+                new TextRun(" authorizes or that "),
+                new TextRun({
+                  text: userData.doctorName,
+                  bold: true,
+                }),
+                new TextRun(", "),
+                new TextRun({
+                  text: userData.doctorTitle,
+                  bold: true,
+                }),
+                new TextRun(" of the at "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(", "),
+                new TextRun({
+                  text: userData.hospitalAddress,
+                  bold: true,
+                }),
+                new TextRun(", are responsible for arranging the donor to donate the "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" to me."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("6. I submit that I am willing to accept and receive one of the "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun("s from the donor, that I am accepting this out of my own, free will and consent and that there is absolutely no compulsion, or undue influence from any source. The Doctors of the Nephrology Department of the "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(" have explained to me in detail about the nature of the operation, the extent of risk involved and the consequences arising out of the transplantation operation. I am hereby giving my full consent to the "),
+                new TextRun({
+                  text: userData.doctorName,
+                  bold: true,
+                }),
+                new TextRun(", "),
+                new TextRun({
+                  text: userData.doctorTitle,
+                  bold: true,
+                }),
+                new TextRun(" to conduct the "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" transplantation operation on me and carry out the subsequent treatment."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("7. I declare that the donation of the "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" by the Donor and the recipient of the same by me under certain terms and condition inclusive of the financial aspects, encumbrance and expenses arising out of the said transplantation are exclusively between the donor and myself and that the "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(" or Department of Nephrology, or the Doctors who participate and conduct the "),
+                new TextRun({
+                  text: userData.organ,
+                  bold: true,
+                }),
+                new TextRun(" transplantation surgery are not liable in any way for the above."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("8. I am fully aware and conscious that the operation is at my own risk and hence I shall not hold "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(" or any Doctor of the "),
+                new TextRun({
+                  text: userData.hospitalName,
+                  bold: true,
+                }),
+                new TextRun(" or any one responsible or make any one liable on account of the operation."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("9. I, Mr. "),
+                new TextRun({
+                  text: userData.patientName,
+                  bold: true,
+                }),
+                new TextRun(" (Patient) and Ms. "),
+                new TextRun({
+                  text: userData.donorName,
+                  bold: true,
+                }),
+                new TextRun(" (Donor) both of us are "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun(" & "),
+                new TextRun({
+                  text: userData.relationship,
+                  bold: true,
+                }),
+                new TextRun("."),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun("The content of this Declaration form was translated in the language("),
+                new TextRun({
+                  text: userData.nativeLanguage,
+                  bold: true,
+                }),
+                new TextRun(") known to me and after understanding the whole contents, I am signing this Declaration Form."),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "Date: 26-02-2025",
+                  bold: true,
+                }),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "Place: Tiruchirappalli",
+                  bold: true,
+                }),
+              ],
+            }),
+  
+            // Signatures
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("Signature of the Patient"),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "     ",
+                  bold: true,
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("Witnesses"),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("1."),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("2."),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "     ",
+                  bold: true,
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("The above facts are true"),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("Before me,"),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("Solemnly affirm at "),
+                new TextRun({
+                  text: userData.place,
+                  bold: true,
+                }),
+                new TextRun(" and"),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("Signed his Name in my presence"),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children: [
+                new TextRun("Advocate, "),
+                new TextRun({
+                  text: userData.advocateName,
+                  bold: true,
+                }),
+              ],
+            }),
+          ],
+        },
+      ],
+    });
+  
+    Packer.toBlob(doc).then((blob) => {
+      saveAs(blob, "Patient_Affidavit.docx");
+    });
+  };
+
+  const [list, setList] = useState([
+    "Survival advantage over dialysis",
+    "Better quality of life",
+    "Independence of dialysis",
+    "No fluid restriction"
+  ]);
+
+  const [ul,setul]=useState([
+    "Deep vein thrombosis / pulmonary embolism",
+    "Bleeding requiring blood transfusions or re- exploration",
+    "Lymph collection around the kidney",
+    "Pain at surgical site",
+    "Blood clot in the graft artery/ vein which might need surgical removal of kidney","Urine leak and /or ",
+    "urine collection in abdomen requiring re-exploration","Reactions/side effects from immunosuppressive medications including, infection, graft dysfunction, bowel disturbance, anaphylaxis especially with intravenous drugs and immunosuppressants"
+  ])
+
+
+
+  const videoConcern = () => {
+    const doc = new Document({
+      sections: [
+        {
+          properties: {},
+          children: [
+            // Title
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "INFORMED CONSENT FOR KIDNEY TRANSPLANT RECIPIENT",
+                  bold: true,
+                  underline: true,
+                  size: 30,
+                }),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "     ",
+                  bold: true,
+                  size: 24,
+                }),
+              ],
+            }),
+
+            // Affidavit Content
+            new Paragraph({
+              children: [
+                new TextRun("The kidney transplant surgery will be done under general anesthesia and usually takes about three to four hours. The surgeon will make an incision that's about eight inches long in your lower abdomen. The donor kidney will then be placed in the small pocket next to your pelvic bone, on either your left or right side. After a successful kidney transplant, it is our hope that you will be free from dialysis and have an improved quality of life "),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: "BENEFITS:",
+                  bold: true,
+                }),
+              ]
+            }),
+            // Manually create a numbered list
+            ...list.map((item, index) => new Paragraph({
+              children: [
+                new TextRun({
+                  text: `${index + 1}.        ${item}`,
+                  
+                   
+                }),
+              ],
+            }),new Paragraph("")
+          
+          ),
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: "ATERNATIVE TREATMENT",
+                  bold: true,
+                  size: 24,
+                }),
+                new TextRun({
+                  text:"Continuation of dialysis"
+                })
+              ]
+            }),
+           
+            new Paragraph({
+              children:[
+                new TextRun({
+                  text:"Potential Medical Risks",
+                  bold:true
+                })
+              ]
+            }),
+            
+            new Paragraph({
+              children:[
+                new TextRun({
+                  text:""
+            })]}),
+            new Paragraph({
+              children:[
+                new TextRun({
+                  text:"Many risks are involved with the transplant procedure. These include, but are not limited to"
+                })
+              ]
+            }),
+            new Paragraph({
+              text:""
+            }),
+            ...ul.map((item) => new Paragraph({
+              children: [
+                new TextRun({
+                  text: `O        ${item}`,
+                 
+                })
+              ]
+            })),
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children:[
+                new TextRun({
+                  text:"Recipient Signature",
+                  bold:true,
+                  size:24
+                })
+              ]
+            })
+
+
+
+          ],
+        },
+      ]
+    });
+
+    Packer.toBlob(doc).then((blob) => {
+      saveAs(blob, "video_concern.docx");
+    });
+  };
+
+
+
+
+
+
   
   // Example user data
   const userData_three = {
@@ -3018,39 +4294,41 @@ export const OrganDonationForm = () => {
   };
   
   // Generate the form with user data
-  DonorDependentAffidavit(userData_three);
+  // DonorDependentAffidavit(userData_three);
   
 
-  // Form_eleven(userData_two)
-  // Generate the form with user data
-  
+ 
   
   // Example user data
-  const userData = {
-    doctorName: "Appan Prakash",
-    doctorQualification: "NEPHRO",
-    doctorRegistrationNumber: "123456",
-    medicalCouncil: "Tamil Nadu Medical Council",
-    donorName: "POONGODI",
-    donorAge: "45",
-    donorGender: "F",
-    donorAddress: "75/96, GANDHIPURAM 1ST STREET, PALLIPALAYAM, NAMAKKAL, TAMIL NADU - 638006",
-    organDonated: "one kidney",
-    recipientName: "NARAYANA SING",
-    recipientAge: "55",
-    recipientGender: "M",
-    recipientAddress: "615, BAPU NAGAR. PALLI, MARWAR, RAJASTHAN",
-    relationship: "FAMILY FRIEND",
-    date: "25-02-2025",
-    place: "Tiruchirappalli",
-  };
+  // const userData = {
+  //   doctorName: "Appan Prakash",
+  //   doctorQualification: "NEPHRO",
+  //   doctorRegistrationNumber: "123456",
+  //   medicalCouncil: "Tamil Nadu Medical Council",
+  //   donorName: "POONGODI",
+  //   donorAge: "45",
+  //   donorGender: "F",
+  //   donorAddress: "75/96, GANDHIPURAM 1ST STREET, PALLIPALAYAM, NAMAKKAL, TAMIL NADU - 638006",
+  //   organDonated: "one kidney",
+  //   recipientName: "NARAYANA SING",
+  //   recipientAge: "55",
+  //   recipientGender: "M",
+  //   recipientAddress: "615, BAPU NAGAR. PALLI, MARWAR, RAJASTHAN",
+  //   relationship: "FAMILY FRIEND",
+  //   date: "25-02-2025",
+  //   place: "Tiruchirappalli",
+  // };
   
   // Generate the form with user data
   // Form_four(userData);
-
+  const handleClick = () => {
+    // generateDocument();
+    videoConcern()
+    // generateDonorConsentForm()
+  }
   return (
     <button
-      onClick={Form_four}
+      onClick={handleClick}
       style={{ padding: "10px 20px", fontSize: "16px", margin: "20px" }}
     >
       Download Organ Donation Form
