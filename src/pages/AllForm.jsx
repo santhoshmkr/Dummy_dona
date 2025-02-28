@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import { Document, Paragraph, TextRun, Packer, AlignmentType,Table,TableRow,TableCell  } from "docx";
-import { Document, Packer,Paragraph, TextRun,AlignmentType,  } from "docx";
+import { Document, Packer,Paragraph, TextRun,AlignmentType } from "docx";
 import { saveAs } from "file-saver";
 
 export const OrganDonationForm = () => {
@@ -4125,6 +4125,18 @@ export const OrganDonationForm = () => {
     "urine collection in abdomen requiring re-exploration","Reactions/side effects from immunosuppressive medications including, infection, graft dysfunction, bowel disturbance, anaphylaxis especially with intravenous drugs and immunosuppressants"
   ])
 
+  const [infection,setInfection]=useState([
+    "Urinary tract, infection of the graft, chest& blood stream infection, surgical site infection in immediate transplant period","Recurrent urinary tract, chest infection, bowel infection at any point post-transplant","Minor to life threatening Viral, bacterial and fungal infection","Cytomegalovirus virus of bowel, lungs, retina","BK virus infection and graft failure","Tuberculosis","Hypertension requiring medications, requiring insulin/ oral medications","oDelayed graft function or failure of the transplanted kidney."," oRejection episode of the transplanted kidney (10-20%) requiring kidney biopsy (one or multiple times). There are three types of rejection Hyper-acute rejection leading to organ failure in the operating room or within a few hours of surgery. Acute rejection in the first three (3) to six (6) months, especially in first weeks requiring intravenous immunosuppressants and/or plasma exchange Later rejection episodes causing permanent damage to the kidney","Lymphoma and skin cancer","Recurrence of the kidney disease and graft failure at any point of time - as early as days to many years after transplant.","Death - The risk of death during or immediately after a kidney transplant","oHypertension, kidney failure later in life of the donor","Death of the donor during or immediately after transplant"
+  ])
+
+  const [terms,setTerms]=useState([
+    "Potential for donor death ( approximate risk 3 in 10000)","Potential for surgical complications including surgical site infection, wound dehiscence, blood or lymph collection, urinary tract infection, chest infection, deep vein thrombosis, pneumothorax & bleeding","Potential for developing hypertension requiring medication / preeclampsia, low grade proteinuria","Potential for kidney failure( approximate risk 3 in 10000 and the need for a future organ transplant for the donor in future","Potential for other medical complications including long-term complications currently unforeseen","Scars or hernias","Pain","Fatigue","Abdominal or bowel symptoms such as bloating and nausea"
+  ])
+
+  const [possible,setPossible]=useState([
+    "Possibility of transplant recipient rejection and need for re-transplantation.","Possibility that the transplant recipient will have a recurrence of disease","Possibility of transplant recipient death","I have read the above information and have had all my questions answered to my satisfaction","I agree to participate as a living kidney donor"
+  ])
+
 
 
   const videoConcern = () => {
@@ -4172,6 +4184,9 @@ export const OrganDonationForm = () => {
             }),
             // Manually create a numbered list
             ...list.map((item, index) => new Paragraph({
+              spacing:{
+                after:300
+              },
               children: [
                 new TextRun({
                   text: `${index + 1}.        ${item}`,
@@ -4220,9 +4235,12 @@ export const OrganDonationForm = () => {
               text:""
             }),
             ...ul.map((item) => new Paragraph({
+              spacing:{
+                after:300
+              },
               children: [
                 new TextRun({
-                  text: `O        ${item}`,
+                  text: `o        ${item}`,
                  
                 })
               ]
@@ -4248,6 +4266,120 @@ export const OrganDonationForm = () => {
               ]
             }),
             new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }), 
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            new Paragraph({
+              alignment: AlignmentType.LEFT,
+              children:[
+                new TextRun({
+                  text:"Recipient Signature",
+                  bold:true,
+                  size:24
+                })
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }), new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            new Paragraph({
+              alignment:AlignmentType.Left,
+              children:[
+                new TextRun({
+                  text:"Infections:",
+                  bold:true
+                })
+              ]
+            }),
+            ...infection.map((item) => new Paragraph({
+              spacing:{
+                after:300
+              },
+              children: [
+                new TextRun(`o        ${item}`),
+                
+              ]
+            })),
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            new Paragraph({
               alignment: AlignmentType.LEFT,
               children:[
                 new TextRun({
@@ -4257,6 +4389,373 @@ export const OrganDonationForm = () => {
                 })
               ]
             })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            })
+            ,
+            new Paragraph({
+              children:[
+                new TextRun("  ")
+              ]
+            }),
+            new Paragraph({
+              
+              children:[
+                new TextRun({
+                  text:"  Recipient Name                                            Signature                                                 Date/Time"
+                })
+              ]
+            })
+            ,
+            new Paragraph({
+              spacing:{
+                after:100
+              },
+              children:[
+                new TextRun(" I have read and understood the above information and have had all my questions answered to my satisfaction")
+              ]
+            })
+            ,
+            new Paragraph({
+              spacing:{
+                after:100
+              },
+              children:[
+                new TextRun("I agree to undergo the kidney transplant surgery and no guarantee has been given to me by anyone as to the results of the transplant")
+              ]
+            })
+            ,
+            new Paragraph({
+              spacing:{
+                after:100
+              },
+              children:[
+                new TextRun("I consent to the doctor performing any additional procedures he deems necessary")
+              ]
+            })
+            
+            ,
+            new Paragraph({
+              spacing:{
+                before:1000
+              },
+              children:[
+                new TextRun("")
+              ]
+            })           
+            ,
+            new Paragraph({
+              spacing:{
+                before:1000
+              },
+              children:[
+                new TextRun("______________________________________________________________________________________")
+              ]
+            }),
+            new Paragraph({
+              
+              children:[
+                new TextRun({
+                  text:"  Recipient Name                                            Signature                                                 Date/Time"
+                })
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun({
+                  text:"  "
+                })
+              ]
+            })
+            ,new Paragraph({
+              spacing:{
+                before:1000
+              },
+              children:[
+                new TextRun("______________________________________________________________________________________")
+              ]
+            }),
+            new Paragraph({
+              
+              children:[
+                new TextRun({
+                  text:"  Transplant Surgeon                                             Signature                                                 Date/Time"
+                })
+              ]
+            }),
+            ,
+            new Paragraph({
+              spacing:{
+                before:1000
+              },
+              children:[
+                new TextRun("______________________________________________________________________________________")
+              ]
+            }),
+            new Paragraph({
+              
+              children:[
+                new TextRun({
+                  text:"  Nephrologist                                           Signature                                                 Date/Time"
+                })
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun({
+                  text:"  "
+                })
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun({
+                  text:"  "
+                })
+              ]
+            }),
+            ,new Paragraph({
+              spacing:{
+                before:1000
+              },
+              children:[
+                new TextRun("______________________________________________________________________________________")
+              ]
+            }),
+            new Paragraph({
+              
+              children:[
+                new TextRun({
+                  text:"  witness                                            Signature                                                 Date/Time"
+                })
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun({
+                  text:"  "
+                })
+              ]
+            }),
+            ,
+            new Paragraph({
+              alignment:AlignmentType.CENTER,
+              children:[
+                new TextRun({
+                  text:"CONSENT FOR LIVING KIDNEY DONATION",
+                  bold:true,
+                  size:30
+                })
+              ]
+            }),
+            new Paragraph({
+              spacing:{
+                before:200
+              },
+              children:[
+                new TextRun("During Kidney Transplantation one of your healthy kidney will be laparoscopicaly removed and placed into recipient's body. Rarely Laparoscopic procedure may be converted to open procedure on table if necessity arises, where 6- to 10-inch incision will be made in your abdomen to remove the kidney")
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun({
+                  text:"Potential risks associated with being a living donor include but may not be limited to the following"
+                })
+              ]
+            }),
+            ...terms.map((item) => new Paragraph({
+              spacing:{
+                after:300
+              },
+              children: [
+                new TextRun({
+                  text: `o        ${item}`,
+                 
+                })
+              ]
+            }))
+            ,
+            new Paragraph({
+              spacing:{
+                before:1000
+              },
+              children:[
+                new TextRun("")
+              ]
+            })           
+            ,
+            new Paragraph({
+              spacing:{
+                before:1000
+              },
+              children:[
+                new TextRun({
+                  text:"Doner signature",
+                  bold:true
+                })
+              ]
+            }),     
+            ...possible.map((item) => new Paragraph({
+              spacing:{
+                after:300
+              },
+              children: [
+                new TextRun({
+                  text: `o        ${item}`,
+                 
+                })
+              ]
+            })),
+            new Paragraph({
+              spacing:{
+                before:1000
+              },
+              children:[
+                new TextRun("")
+              ]
+            })           
+            ,
+            new Paragraph({
+              spacing:{
+                before:1000
+              },
+              children:[
+                new TextRun("______________________________________________________________________________________")
+              ]
+            }),
+            new Paragraph({
+              
+              children:[
+                new TextRun({
+                  text:"  Recipient Name                                            Signature                                                 Date/Time"
+                })
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun({
+                  text:"  "
+                })
+              ]
+            })
+            ,new Paragraph({
+              spacing:{
+                before:1000
+              },
+              children:[
+                new TextRun("______________________________________________________________________________________")
+              ]
+            }),
+            new Paragraph({
+              
+              children:[
+                new TextRun({
+                  text:"  Transplant Surgeon                                             Signature                                                 Date/Time"
+                })
+              ]
+            }),
+            ,
+            new Paragraph({
+              spacing:{
+                before:1000
+              },
+              children:[
+                new TextRun("______________________________________________________________________________________")
+              ]
+            }),
+            new Paragraph({
+              
+              children:[
+                new TextRun({
+                  text:"  Nephrologist                                           Signature                                                 Date/Time"
+                })
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun({
+                  text:"  "
+                })
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun({
+                  text:"  "
+                })
+              ]
+            }),
+            ,new Paragraph({
+              spacing:{
+                before:1000
+              },
+              children:[
+                new TextRun("______________________________________________________________________________________")
+              ]
+            }),
+            new Paragraph({
+              
+              children:[
+                new TextRun({
+                  text:"  witness                                            Signature                                                 Date/Time"
+                })
+              ]
+            }),
+            new Paragraph({
+              children:[
+                new TextRun({
+                  text:"  "
+                })
+              ]
+            }),
+                  
+            
+            
+
+
+           
+            
+
+
 
 
 
@@ -4270,7 +4769,507 @@ export const OrganDonationForm = () => {
     });
   };
 
+  const Doner_defendent_affiliate_tamil = () => {
+    const doc = new Document({
+      sections: [
+        {
+          properties: {},
+          children: [
+            // Title
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "தானம் வழங்குபவரின் வாரிசுதாரரின் வாக்குமூலம்",
+                  bold: true,
+                  size: 32,
+                }),
+              ],
+            }),
+            // Main Content
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "நான் அப்துல் ரஹிம் வயது 35ஆண்டுகள் கணவன் & மனைவி 39/19, காசி கார்டன் 3வது தெரு, இராயபுரம், சென்னை, தமிழ் நாடு - 600013 என்ற விலாசத்தில் வசிக்கும் நான் இதன் மூலம் மனமுவந்து உண்மையுடன், உறுதியுடன் கூறுவது என்னவென்றால்",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "எனது மைத்துணன் திரு. பாரிஸ்கான் என்பவர் இரண்டு சிறுநீரகம் செயலிழந்து பாதிக்கப்பட்டுள்ளார்.",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "என்னுடைய கணவன் திருமதி. உமல்பாத்திமா தன்னுடைய ஒரு சிறுநீரகத்தை தனது சித்தப்பா மகன் திரு. பாரிஸ்கான் என்பவருக்கு தானமாக தர முழுமனதுடன் சம்மதித்துள்ளார்.",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "இவ்வாறு உடல் உறுப்பை மாற்று அறுவை சிகிச்சை செய்து பொருத்துவதின் மூலன் ஏற்படும் வலி, தொந்தரவு இரத்தப்போக்கு மற்றும் அபாயகரமான விளைவுகளை ஏற்படுத்தி உடல் நலத்திற்கு கேடுவிளைவிக்கும் என்பதை நான் புரிந்துகொண்டேன்.",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "மீதம் ஒரு சிறுநீரகம் மட்டுமே எனது மனைவி உடலில் இருக்கும் பட்சத்தில் எதிர்காலத்தில் சில பாதிப்புகள் ஏற்படலாம் என்பதையும், தானம் கொடுப்பவர் மேற்கண்ட டயாலிசிஸ் அல்லது உடல் உறுப்பு மாற்று சிகிச்சைக்கு உட்படலாம் என்பதையும் அறிவேன்.",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "நல்ல உடல் நலம் உடைய நபர் ஒருவருடைய சிறுநீரகத்தை தானம் கொடுப்பதால் அவர் உயர் இரத்த அழுத்தம் மற்றும் உடலில் உள்ள புரதச் சத்துக்கள் சிறுநீர் மூலம் வெளியேறி எதிர்வரும் நாட்களில் உடலுக்கு பாதிப்பை ஏற்படுத்தும் என்பதையும் அறிவேன்.",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "நான் இதன்மூலம் தெரிவிப்பது என்னவென்றால், எந்தவித பிரதிபலனும் எதிர்பாராமல், முழுமனதுடன் திருமதி. உமல்பாத்திமா என்பவர் அவருடைய ஒரு சிறுநீரகத்தை சித்தப்பா மகன் திரு. பாரிஸ்கான் என்பவருக்கு தானமாக அளிக்க முன்வந்துள்ளார் மற்றும் நானும் என்னுடைய குடும்ப உறுப்பினர்கள் டாக்டர். அப்பன் பிரகாஷ் (நெப்ராலஜிஸ்ட்) மற்றும் டாக்டர்.சுரேஷ் பாலாஜி (யூராலஜிஸ்ட் & அறுவை சிகிச்சை நிபுணர்) மற்றம் அறுவை சிகிச்சை மருத்துவர்கள் அல்லது மயக்கமருந்து மருத்துவர் ஸ்டார் கிம்ஸ் மருத்துவமனை ஆகியோர்கள் திருமதி. உமல்பாத்திமா என்பவருக்கு சிறுநீரக தானம் அறுவை சிகிச்சையின் போதும் அல்லது அறுவை சிகிச்சை முடிந்த பின்னரும் துரதிஷ்டவசமாக ஏதேனும் நடக்கும் பட்சத்தில் எதிர்வரும் நாட்களில் மேற்கூறிய மருத்துவர்களும், மருத்துவமனையும் எதற்கும் பொறுப்பேற்கமாட்டார்கள் என்பதை நன்கு புரிந்துகொண்டேன்.",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "இந்த சிறுநீரக தானத்திற்காக நானோ, மற்றவர்களோ அல்லது எனது குடும்ப உறுப்பினர்களோ எந்தவித பணபயனையோ எதிர்பார்த்து செய்யவில்லை. இதுபற்றிய விழிப்புணர்வை நான் நன்கு அறிவேன்.",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "நான் தேக உறுப்புகள் மாற்றி பொருத்துதல் சட்டம் விதி, 1994 (2011 சட்டத்திருத்தம் உட்பட) பற்றி விழிப்புணர்வுடன் அறிந்துள்ளேன்.",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "மேற்சொன்ன வாசகங்கள் யாவும் என்னால் அளிக்கப்பட்டவை எனவும், இவை அனைத்தும் என்னுடைய அறிவுக்கு எட்டியவரை உண்மை எனவும் சான்றளிக்கிறேன்.",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "நான் மேற்கூறிய தகவல்கள் தவறு என தெரியும் பட்சத்தில் சட்டபூர்வமாக எனக்கு எதிராக எடுக்கப்படும் எந்த நடவடிக்கைகளுக்கும் நான் கட்டுப்படுவேன் என்பதை நான் தெரிவிக்கிறேன். தமிழில் படிக்கக்கேட்டேன்",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "(அவய கொடையாளியின் உறவினர்  கையொப்பம்)",
+                  bold: true,
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: "சாட்சிகள் கையொப்பம்: (பெயர் மற்றும் விலாசம்)",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "1.",
+                  size: 24,
+                }),
+              ],
+            }),
+            new Paragraph({
+              spacing: {
+                after: 240,
+              },
+              children: [
+                new TextRun({
+                  text: "2.",
+                  size: 24,
+                }),
+              ],
+            }),
+            ...Array(10).fill("").map(() =>
+              new Paragraph({
+                spacing: {
+                  before: 480,
+                },
+                children: [
+                  new TextRun("  "), // Empty space
+                ],
+              })
+            ),
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "…………………………………..இடத்தில் ……………... தேதியில் மேற்குறிப்பிட்டுள்ள பிராமண வாக்குமூலத்தில் கண்டுள்ள யாவும் இந்த உறுதிமொழியளிப்பவரிடம் அவருக்கு தெரிந்த மொழியில், படித்துப்பார்க்கப்பட்டும் மேலும் படிக்க கேட்டும் முற்றிலும் உண்மை என தெரிந்துகொண்ட நிலையில் என் முன்பாக இதில் கையொப்பம் செய்தார்.",
+                  size: 24,
+                }),
+              ],
+            }),
+          ],
+        },
+      ],
+    });
+  
+    Packer.toBlob(doc).then((blob) => {
+      saveAs(blob, "video_concern.docx");
+    });
+  };
 
+  const doner_affidavi_Tamil = () => {
+    const doc = new Document({
+      sections: [
+        {
+          properties: {},
+          children: [
+            // Title with font styling
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "தானம் கொடுப்பவர் வாக்குமூலம்",
+                  bold: true,
+                  size: 32,
+                  font: "Latha", // Tamil font
+                }),
+              ],
+            }),
+  
+            // Main content with font styling
+            new Paragraph({
+              spacing: { after: 240 },
+              children: [
+                new TextRun({
+                  text: "நான் undefined. உமல்பாத்திமா வயது 31ஆண்டுகளில், undefined undefined கதவு எண் 39/19, காசி கார்டன் 3வது தெரு, இராயபுரம், சென்னை, தமிழ் நாடு - 600013 என்ற விலாசத்தில் வசிக்கும் நான் இதன் மூலம் மனமுவந்து உண்மையுடன், உறுதியுடன் கூறுவது என்னவென்றால்,",
+                  size: 24,
+                  font: "Latha",
+                }),
+              ],
+            }),
+  
+            // Subsection 1
+            new Paragraph({
+              spacing: { after: 240 },
+              children: [
+                new TextRun({
+                  text: "1.என்னுடைய சித்தப்பா மகன் பாரிஸ்கான் வயது 27ஆண்டுகள், undefined  undefined என்பவர் இரண்டு சிறுநீரகங்களும் செயலிழந்து தற்பொழுது ஸ்டார் கிம்ஸ் மருத்துவமனை சிகிச்சை பெற்று வருகிறார். அவருடைய இரண்டு சிறுநீரகங்கள் முற்றிலும் சிதைந்து விட்டது என்பதை நன்கு அறிவேன். சிதைந்த அந்த சிறுநீரகங்களை எடுத்துவிட்டு என்னுடைய ஒரு சிறுநீரகத்தை எடுத்து பொருத்துவதற்கு சம்மதம் தெரிவித்துக்கொள்கிறேன். இவ்வாறு சிறுநீரகத்தை தானம் செய்வதால், இயற்கையாக ஏற்படக்கூடிய விளைவுகளையும், என்னுடைய உடலிலிருந்து ஒரு சிறுநீரகத்தை எடுப்பதால் எதிர்காலத்தில் என்னுடைய உடலுக்கு ஏற்படும் கெடுதல்களையும், மாற்ற என்னுடைய ஒரு சிறுநீரகத்திருக்கும் அறுவை சிகிச்சை முடித்த பின்னர் மீண்டும் கெடுதி அல்லது நோய்களை ஏற்படுத்தும் என்பதை அறிவேன்.",
+                  size: 24,
+                  font: "Latha",
+                }),
+              ],
+            }),
+  
+            // Subsection 2
+            new Paragraph({
+              spacing: { after: 240 },
+              children: [
+                new TextRun({
+                  text: "2.இந்த சிறுநீரக தானம் மாற்று அறுவை சிகிச்சை வெற்றியுடன் நடத்த முடியும் என்பதை விழிப்புணர்வுடன் அறிவேன்.",
+                  size: 24,
+                  font: "Latha",
+                }),
+              ],
+            }),
+  
+            // ... Add similar styling to other paragraphs ...
+  
+            // Signature section
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: "(அவய கொடையாளியின்   கையொப்பம்)",
+                  bold: true,
+                  size: 24,
+                  font: "Latha",
+                }),
+              ],
+            }),
+  
+            // Witnesses section
+            new Paragraph({
+              children: [
+                new TextRun({
+                  text: "சாட்சிகள் கையொப்பம்: (பெயர் மற்றும் விலாசம்)",
+                  size: 24,
+                  font: "Latha",
+                }),
+              ],
+            }),
+          ],
+        },
+      ],
+    });
+  
+    Packer.toBlob(doc).then((blob) => {
+      saveAs(blob, "doner_affidavi_tamil.docx");
+    });
+  };
+
+
+
+
+  const patient_affidavi_Tamil = () => {
+    const doc = new Document({
+        sections: [
+            {
+                properties: {},
+                children: [
+                    // Title
+                    new Paragraph({
+                        alignment: AlignmentType.CENTER,
+                        children: [
+                            new TextRun({
+                                text: "நோயாளியின் வாக்குமூலம்",
+                                bold: true,
+                                size: 32,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Main content
+                    new Paragraph({
+                        spacing: { after: 240 },
+                        children: [
+                            new TextRun({
+                                text: "நான் திரு. பாரிஸ்கான் வயது 27 ஆண்டுகள்,  undefined. undefined 460(3), நாவலர்நகர், 2ம் தெரு, காலனி, விளார், தஞ்சாவூர், தமிழ் நாடு-613006 என்ற விலாசத்தில் வசிக்கும் நான் இதன் மூலம் மனமுவந்து உண்மையுடன், உறுதியுடன் கூறுவது என்னவென்றால்,",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Point 1
+                    new Paragraph({
+                        spacing: { after: 240 },
+                        children: [
+                            new TextRun({
+                                text: "1) என்னுடைய இரண்டு சிறுநீரகங்களும் முற்றிலும் பாதிக்கப்பட்டு நோய்வாய்பட்டுள்ளேன், எனது பெரியப்பா மகள் திருமதி. உமல்பாத்திமா தாமாக முன்வந்து தன்னுடைய ஒரு சிறுநீரகத்தை எனக்கு தனமாக அளித்து என்னுடைய வாழ்க்கையை காப்பாற்ற உள்ளார்கள்.",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Point 2
+                    new Paragraph({
+                        spacing: { after: 240 },
+                        children: [
+                            new TextRun({
+                                text: "2) நான் இந்த சிறுநீரக மாற்று அறுவைசிகிச்சையை என் முழுமன சம்மதத்துடன் ஏற்றுக்கொள்கிறேன். இந்த அறுவைசிகிச்சையின் பின் விளைவுகள் பற்றி எனக்கு நன்கு தெரியும். என் அறிவுத் திறமைக்கு எட்டியவாறு எந்தவிளைவுகள் எனக்கு ஏற்பட்டாலும், இது சம்மந்தமாக எந்த ஒரு நபரையும் நான் நெருக்கடிக்கு ஆளாக்கமாட்டேன்.",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Point 3
+                    new Paragraph({
+                        spacing: { after: 240 },
+                        children: [
+                            new TextRun({
+                                text: "3) நான் மேற்கூறிய விலாசத்தில் என்னுடைய குடும்ப உறுப்பினர்களுடன் வசித்து வருகிறேன். நான் முழு சுவாதீனத்துடனும், மனோசக்திக்கு உட்பட்டும் மற்றும் எனது உடல் நல்ல நிலையிலும், ஏற்றுக்கொள்ளக்கூடிய வயது எல்லையையும், இந்த சிறுநீரக மாற்று அறுவை சிகிச்சையின் மூலம் எனது உடலில் நல்ல முன்னேற்றம் ஏற்படும் என்பதையும், இந்த சிறுநீரக மாற்று அறுவை சிகிச்சை முழுவதும் வெற்றியுடன் முடிக்க முடியும் என்ற விழிப்புணர்வை நான் அறிவேன்.",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Point 4
+                    new Paragraph({
+                        spacing: { after: 240 },
+                        children: [
+                            new TextRun({
+                                text: "4) நான் என்னுடைய இதயபூர்வமான சம்மதத்தையும் மற்றும் அதிகாரத்தையும், இந்த சிறுநீரக மாற்று அறுவை சிகிச்சை செய்யும் மருத்துவர்களுக்கும் மற்றும் சிறுநீரகவியல் மருத்துவர்களான டாக்டர். அப்பன் பிரகாஷ் MD.,DM.,,(நெப்ராலஜிஸ்ட்) மற்றும் டாக்டர்.சுரேஷ் பாலாஜி Ms.,,Mch.,, (யூராலஜிஸ்ட் & அறுவை சிகிச்சை நிபுணர்) மற்றும் மயக்கமருந்து மருத்துவர் குழுவுக்கும் இந்த அறுவை சிகிச்சையில் பணியாற்றும் அனைத்து மருத்துவர்களுக்கும், எனக்காக ஒரு மாற்று சிறுநீரகத்தை வழங்கும் என்னுடைய பெரியப்பா மகள் திருமதி. உமல்பாத்திமா 3மற்றும் அனைவருக்கும் இதயபூர்வமான சம்மதம் மற்றும் அதிகாரத்தையும் வழங்குகின்றேன்.",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Point 5
+                    new Paragraph({
+                        spacing: { after: 240 },
+                        children: [
+                            new TextRun({
+                                text: "5) மேலும் இதனால் உறுதியாக கூறுவது என்னவென்றால், இந்த அறுவை சிகிச்சையின் போது என்னுடைய உடல்நிலை சமந்தமாகவும், மருத்துவ ரீதியாகவும் எந்த முடிவுகளை எடுக்கவும் நான் என்னுடைய முழு அங்கீகாரத்தையும், சம்மதத்தையும் மருத்துவ குழுவினருக்கு நான் ஈடுபாடுடன் அளிக்கிறேன்.",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Point 6
+                    new Paragraph({
+                        spacing: { after: 240 },
+                        children: [
+                            new TextRun({
+                                text: "6) நான் மேலும் மனமுவந்தும், உறுதியுடனும், கூறுவது என்னவென்றால் என்னுடைய இந்த சிறுநீரக மாற்று அறுவை சிகிச்சைக்கு பின்னர் ஏதாவது பக்கவிளைவுகள் அல்லது கடினமான சூழ்நிலைகள் ஏற்படும் பட்சத்தில்  ஸ்டார் கிம்ஸ் மருத்துவமனை என்ற விலாசத்தில் அமைந்திருக்கும் மருத்துவமனையையோ, மருத்துவ குழுவினரையோ அல்லது எனக்கு சிகிச்சை அளிக்கும் மருத்துவர் குழுவின் மீதோ எப்பொழுதும் எந்தவிதமான கஷ்டமான நிலைகளுக்கும் உட்படுத்தமாட்டேன் என உறுதியுடன் சான்றளிக்கிறேன்.",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Point 7
+                    new Paragraph({
+                        spacing: { after: 240 },
+                        children: [
+                            new TextRun({
+                                text: "7) மேலும் நான் முழு விழிப்புணர்வுடன், உண்மையுடன் சிறுநீரகமாற்று அறுவை சிகிச்சைக்கு பின்னர் மருத்துவர்கள் பரிந்துரைக்கும் மருந்துகளையும், மருத்துவர்களின் அறிவுரைகளின்படியும் தொடர்ந்து நடந்துகொள்வேன் எனவும் உண்மையுடன் பின்பற்றுவேன் எனவும் சான்றளிக்கிறேன். இது தவறும் பட்சத்தில் என்னுடைய உடல்நலம் சீர்கெடும் என்பதை நான் அறிவேன்.",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Point 8
+                    new Paragraph({
+                        spacing: { after: 240 },
+                        children: [
+                            new TextRun({
+                                text: "8) இந்த சிறுநீரக மாற்று அறுவைசிகிச்சையை நிறைவேற்றும் பொருட்டு, நான் என்னுடைய விருப்பத்துடனும், சம்மதத்துடனும் தெரிவித்துக் கொள்கிறேன். அறுவை சிகிச்சை மூலமாக எதிர்வரும் நாட்களில் ஏதாவது பக்கவிளைவுகள் அல்லது சிக்கலான நடவடிக்கைகள், தொந்தரவு மற்றும் குழப்பமான சூழ்நிலைகள் ஏற்படுமாயின் இது சமந்தமாக நான் யாரையும் நிர்பந்தம் செய்யமாட்டேன்.",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Point 9
+                    new Paragraph({
+                        spacing: { after: 240 },
+                        children: [
+                            new TextRun({
+                                text: "9) நான் மனிததேக உறுப்புக்கள் மாற்று பொருத்துதல் சட்டம் விதி, 1994(2011சட்டத்திருத்தம் உட்பட)பற்றிய விழிப்புணர்வை நன்கு அறிவேன். நான் இதன் மூலம் உறுதியாக கூறுவது யாதெனில், மேற்கூறிய தகவல்கள் யாவும் என்னால் அளிக்கப்பட்டவை எனவும், என்னுடைய அறிவு திறமைக்கு எட்டியவரை உண்மையாக சான்றளிக்கிறேன். மேலும் நான் மேற்குறிய தகவல்கள் தவறு என தெரியும்பட்சத்தில், என்மீது எனக்கு எதிராக எந்தவிதமான சட்டரீதியான நடவடிக்கைகளையும் எடுக்கமுடியும் என்பதை விழிஒப்புணர்வுடன் அறிவேன்.",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Patient's signature
+                    new Paragraph({
+                        alignment: AlignmentType.CENTER,
+                        children: [
+                            new TextRun({
+                                text: "(நோயாளியின் கையொப்பம்)",
+                                bold: true,
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Witnesses section
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: "சாட்சிகள் கையொப்பம்: (பெயர் மற்றும் விலாசம்)",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: "1.",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: "2.",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+
+                    // Additional paragraph
+                    new Paragraph({
+                        children: [
+                            new TextRun({
+                                text: "……………………………இடத்தில்…………………தேதியில் மேற் குறிப்பிட்டுள்ள பிராமண வாக்குமூலத்தில் கண்டுள்ள யாவும் இந்த உறுதிமொழியளிப்பவரிடம் அவருக்கு தெரிந்த மொழியில், படித்துப்பார்க்கப்பட்டும் மேலும் படிக்க கேட்டும் முற்றிலும் உண்மை என தெரிந்துகொண்ட நிலையில் என் முன்பாக இதில் கையொப்பம் செய்தார்.",
+                                size: 24,
+                                font: "Latha",
+                            }),
+                        ],
+                    }),
+                ],
+            },
+        ],
+    });
+
+    Packer.toBlob(doc).then((blob) => {
+        saveAs(blob, "doner_affidavi_tamil.docx");
+    });
+};
 
 
 
@@ -4299,32 +5298,12 @@ export const OrganDonationForm = () => {
 
  
   
-  // Example user data
-  // const userData = {
-  //   doctorName: "Appan Prakash",
-  //   doctorQualification: "NEPHRO",
-  //   doctorRegistrationNumber: "123456",
-  //   medicalCouncil: "Tamil Nadu Medical Council",
-  //   donorName: "POONGODI",
-  //   donorAge: "45",
-  //   donorGender: "F",
-  //   donorAddress: "75/96, GANDHIPURAM 1ST STREET, PALLIPALAYAM, NAMAKKAL, TAMIL NADU - 638006",
-  //   organDonated: "one kidney",
-  //   recipientName: "NARAYANA SING",
-  //   recipientAge: "55",
-  //   recipientGender: "M",
-  //   recipientAddress: "615, BAPU NAGAR. PALLI, MARWAR, RAJASTHAN",
-  //   relationship: "FAMILY FRIEND",
-  //   date: "25-02-2025",
-  //   place: "Tiruchirappalli",
-  // };
-  
   // Generate the form with user data
   // Form_four(userData);
   const handleClick = () => {
-    // generateDocument();
-    videoConcern()
-    // generateDonorConsentForm()
+    // Doner_defendent_affiliate_tamil()
+    // doner_affidavi_Tamil()
+    patient_affidavi_Tamil()
   }
   return (
     <button
