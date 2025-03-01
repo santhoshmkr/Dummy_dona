@@ -5267,10 +5267,1417 @@ export const OrganDonationForm = () => {
     });
 
     Packer.toBlob(doc).then((blob) => {
-        saveAs(blob, "doner_affidavi_tamil.docx");
+        saveAs(blob, "patient_affidavi_tamil.docx");
     });
 };
 
+const form_20 = () => {
+  const doc = new Document({
+    sections: [
+      {
+        properties: {},
+        children: [
+          // Title
+          new Paragraph({
+            alignment: AlignmentType.CENTER,
+            children: [
+              new TextRun({
+                text: "FORM 20",
+                bold: true,
+                underline: true,
+                size: 24,
+              }),
+            ],
+          }),
+          new Paragraph({
+            alignment: AlignmentType.CENTER,
+            children: [
+              new TextRun({
+                text: "VERIFICATION CERTIFICATE IN RESPECT OF DOMICILE STATUS OF RECIPIENT OR DONOR",
+                bold: true,
+                underline: true,
+                size: 24,
+              }),
+            ],
+          }),
+          new Paragraph({
+            alignment: AlignmentType.CENTER,
+            children: [
+              new TextRun({
+                text: "[To be issued by tehsildar or any other authorised officer for the purpose (required only for the donor - other than near relative or recipient if they do not belong to the state where transplant hospital identified for operation is located)] [Refer rule 14]",
+                italic: true,
+                size: 18,
+              }),
+            ],
+          }),
+          new Paragraph({
+            alignment: AlignmentType.CENTER,
+            children: [
+              new TextRun({
+                text: "PART I (To be filled by applicant donor or recipient separately in triplicate)",
+                bold: true,
+                size: 20,
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "In reference to application for verification of domicile status for donation of …………………………………………………………………………...",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "(Name of organ/Tissue) from living donor (other than near relative) or recipient under Transplantation of Human Organ Act, 1994 (42 of 1994), submitted on (date) ………………….. by the applicant donor or recipient, with following details and photograph, along with his or her identification and domicile status for verification.",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Details of Applicant Recipient or Donor",
+                bold: true,
+                size: 18,
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Name : Sundar",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Age : 21",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Sex : Male",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Relationship : Father of (F/O)",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Relationship Person Name : Rajaligam",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Address: 4/57 palaiyathan thootam",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Hospital Reg. No: ",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "(Recent Photo of Applicant must be signed by him or her across the photo after affixing it)",
+                italic: true,
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "The detail of my donor or recipient are as under and I have enclosed his or her self-signed recent photograph :",
+                bold: true,
+                size: 18,
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Name : Rajaligam",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Age : 39",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Sex : Male",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Relationship : Father of (F/O)",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Relationship Person Name : Veiraperummal",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Address: 4/57 palaiyathan thootam",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Hospital Reg. No: ",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Signature of Applicant",
+                bold: true,
+                size: 18,
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Enclosure: Self signed copy of the donor or recipient for the applicant (to be enclosed )",
+              }),
+            ],
+          }),
+          new Paragraph({
+            alignment: AlignmentType.CENTER,
+            children: [
+              new TextRun({
+                text: "PART II (To be filled by the certificate issuing authority):",
+                bold: true,
+                size: 20,
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "The above request has been examined and it is certified that the domicile status of the applicant donor or recipient mentioned as above has been verified as under:",
+                bold: true,
+                size: 18,
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Name …..………………………………………………………..Son or Daughter or Wife of ………………………………………………….………..",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "resident of village or ward ………….,…………………………Tehsil or Taluka………………………………………………………………………..",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "District………..………………………………………………….State or UT …………………………………………………………………………….",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "and found correct or incorrect ……………………………………………………………………………………………………………………..……….",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "………………………………………………………………………………………………………………………………………………………………",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Date …………………..……",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Place ………………………",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Reference No",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Authorised Signatory",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Name and Designation",
+              }),
+            ],
+          }),
+          new Paragraph({
+            children: [
+              new TextRun({
+                text: "Office Stamp",
+              }),
+            ],
+          }),
+        ],
+      },
+    ]
+  });
+
+  Packer.toBlob(doc).then((blob) => {
+    saveAs(blob, "form20.docx");
+  });
+};
+
+const form_21 = () => {
+  // Using docx library to create document
+  
+  const doc = new Document({
+      sections: [
+          {
+              properties: {},
+              children: [
+                  // Title Section
+                  new Paragraph({
+                      alignment: AlignmentType.CENTER,
+                      children: [
+                          new TextRun({
+                              text: "FORM 21",
+                              bold: true,
+                              size: 28,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      alignment: AlignmentType.CENTER,
+                      children: [
+                          new TextRun({
+                              text: "CERTIFICATE OF RELATIONSHIP BETWEEN DONOR AND RECIPIENT IN CASE OF FOREIGNERS",
+                              bold: true,
+                              size: 24,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      alignment: AlignmentType.CENTER,
+                      children: [
+                          new TextRun({
+                              text: "(To be issued by the Embassy concerned) [Refer rule 20(a)]",
+                              size: 20,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({ text: "" }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "The embassy of ……………………… (Name of Country) in India, is in receipt of an application received from (Name of Organ donor and recipient) on ………………………..(Date) recommended by (Name of Government Department of country of origin) for facilitation of donation of………………………………(Name of Organ or Tissue) from living donor …………………………..(Name of donor) to the recipient………………………………...(Name of recipient) for therapeutic purposes under the Transplantation of Human Organ Act, 1994(42 of 1994). The details of donor and recipient and photographs are as given below:-",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  // Recipient and Donor Details Section
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "Details of Recipient",
+                              bold: true,
+                              size: 16,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "Name: amjad Khna",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "Age: 42",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "   Sex: Male",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: " Relationship: Father of (F/O)",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: " Relationship Person Name: Gani khan",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "   Address: abdul shah colony, Choudhary masala udyog, siwanchi gate, jodhpur, Rajesthan - 342001",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({ text: "" }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "Details of Donor",
+                              bold: true,
+                              size: 16,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "Name: sangeetha",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "Age: 35",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "   Sex: Female",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: " Relationship: Wife of (W/O)",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: " Relationship Person Name: baskar",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "   Address: 5/15, weavers colony-3, tiruchengode, tamilnadu-637211",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  // Photo Section
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "{photo section}",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({ text: "Recipient" }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "(Photo of recipient and donor must be signed and stamped across the photo after affixing)",
+                              italic: true,
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({ text: "" }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "1.This is to certify that relationship between donor and Recipient is……………………………………………………………………………...",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "2.The authenticity of following enclosed identification and verification documents is certified",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "a …………………………………………………………………………………………………….................................................... b…………………………………………………………………………………………………………………………………………",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "'No objection certificate' is granted, as to the best of my knowledge, the donor is donating out of love and affection or affection and attachment towards the recipient, and there is no financial transaction between recipient and donor and there is no pressure on or coercion of the donor.",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({ text: "" }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "(Signature of Senior Embassy Official)",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "Date: 01-03-2025",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "Name: ………………………………………",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "Place: Tiruchirappalli",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+                  new Paragraph({
+                      children: [
+                          new TextRun({
+                              text: "Designation………………………………...",
+                              size: 14,
+                          }),
+                      ],
+                  }),
+              ],
+          },
+      ],
+  });
+
+  // Generate and save the document
+  Packer.toBlob(doc).then((blob) => {
+      saveAs(blob, "form_21.docx");
+  });
+};
+
+
+
+
+const letter = () => {
+  const doc = new Document({
+    sections: [
+      {
+        children: [
+          // First Letter
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun("To, "),
+              new TextRun("Date: 01-03-2025")
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun("The Dean,\n"),
+              new TextRun("Authorization Committee,\n"),
+              new TextRun("Govt Rajaji Hospital,\n"),
+              new TextRun("Madurai -20.")
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [new TextRun("Respected Sir / Madam,")]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun({
+                text: "Sub: Application for Live Donor Kidney Transplantation- Mr. Parishkan (Patient) &Ms. Umalfathima(Donor)",
+                bold: true
+              })
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun("Greetings from Star Kims Hospital, D6, 6th Cross, th Cross St W, Extension, Thillai Nagar, Tiruchirappalli, Tamil Nadu, Tiruchirappalli, Tamil Nadu, 620018.")
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun("Herewith forwarding the application of the above mentioned patient for the approval of the Authorization Committee for their Live Donor Kidney Transplantation. All the documents as per the checklist are attached along with a Demand Draft (No…………………) dated…………………, Rs. 1000/-")
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun("Patient "),
+              new TextRun("Donor")
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun("We kindly request you to process their application.")
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [new TextRun("Thank You")]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun("Signature of Authorized Signatory of the Hospital")
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [new TextRun("01-03-2025")]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [new TextRun("Tiruchirappalli")]
+          }),
+
+          // Second Letter
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [new TextRun("\n\nTo")]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun("The Dean,\n"),
+              new TextRun("Authorization Committee,\n"),
+              new TextRun("Govt Rajaji Hospital,\n"),
+              new TextRun("Madurai -20.")
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [new TextRun("Respected Sir,")]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun({
+                text: "Sub: Application for Live Donor Kidney Transplant – Patient Mr. Parishkan & Ms. Umalfathima (Niece & Niece) Donor - Reg",
+                bold: true
+              })
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun("Herewith forwarding the application of the above mentioned patient for the approval for their live Donor Kidney Transplantation. All the documents as per the Authorization Committee Checklist is attached for your kind perusal")
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun("Patient "),
+              new TextRun("Donor")
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun("I kindly request you to review their application and approve for transplantation.")
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [new TextRun("Thank you.")]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [
+              new TextRun("Dr. Appan Prakash., MD.,DM.,, (Nephro)\n"),
+              new TextRun("Chief Consultant – Interventional Nephrologus & Transplant Physician")
+            ]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [new TextRun("01-03-2025")]
+          }),
+          new Paragraph({
+            alignment: AlignmentType.LEFT,
+            children: [new TextRun("Tiruchirappalli")]
+          }),
+        ]
+      }
+    ]
+  });
+
+  Packer.toBlob(doc).then((blob) => {
+    saveAs(blob, "transplant_application.docx");
+  });
+};
+
+
+
+const form_declaration = () => {
+    const doc = new Document({
+        sections: [{
+            children: [
+                // Doctor's Declaration
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                        new TextRun({
+                            text: 'Declaration of the Doctor on the Post-Operative Complication to the Patient, Donor & Donor’s Dependent',
+                            bold: true,
+                        }),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                        new TextRun("I hereby certify that, Mr. dfger(Patient), Mr. dfgdfg(Prospective donor) &Mr. dfgdfg(Donor Dependent) have been explained in detail on complications involved on Kidney transplant and donor surgery. They are also aware that one of the kidneys will be removed surgically from the donor and the below listed complications of the procedure have been explained to us in detail in their language."),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                        new TextRun({ text: 'Post- Operative Complication for Patient', bold: true }),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("I. Bleeding") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("II. Increased Risk of Infection- Immediate and Delayed") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("III. Delayed Graft Function") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("IV. Acute Rejection") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("V. Chronic Rejection") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("VI. Urine Leak") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("VII. Malignancy Occasionally") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                        new TextRun({ text: 'Post- Operative Complications for Donor', bold: true }),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("I. Bleeding") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("II. Wound Infection") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("III. Damage to another Kidney") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("IV. Protein leak in urine") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("V. High Blood Pressure") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("VI. Even Death is possible") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                        new TextRun("Dr.Appan Prakash MD.,DM., Nephrology Star Kims Hospital, Tiruchirappalli."),
+                    ],
+                }),
+                new Paragraph({}),  // Blank line for spacing
+                // Recipient's Declaration
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                        new TextRun({ text: 'DECLARATION', bold: true }),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                        new TextRun("Dr. Suresh Bhalaji Ms.,,Mch.,, (Consultant-Transplant Surgeon), explained to us the following complications of Kidney Transplantation for the Recipient and the complications of donating a kidney by the Donor."),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                        new TextRun("Complications of Kidney Transplantation for the Recipient: -"),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("1. Rejection") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("2. Infection") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("3. Bleeding") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                        new TextRun("Complications of Kidney Donation: -"),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("1. The risk of surgery and anesthesia.") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("2. Possibility of hypertension and proteinuria in the long run.") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("3. Possibility of disease or injury to the single kidney.") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [ new TextRun("4. Inability to work hard for three months from the date of surgery.") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    children: [
+                        new TextRun("And we Mr. dfger(Patient), Mr. dfgdfg(Prospective donor) & Mr. dfgdfg(Donor Dependent) have clearly understood it and have unanimously agreed to proceed further for Kidney Transplantation at Star Kims Hospital, D6, 6th Cross, th Cross St W, Extension, Thillai Nagar, Tiruchirappalli, Tamil Nadu , Tiruchirappalli, Tamil Nadu, 620018."),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [ new TextRun("Recipient") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [ new TextRun("Donor") ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [ new TextRun("Donor Spouse/Dependent") ],
+                }),
+            ],
+        }],
+    });
+
+    Packer.toBlob(doc).then((blob) => {
+        saveAs(blob, "transplant_declaration.docx");
+    });
+};
+
+
+
+const form_identification_marks = () => {
+    const doc = new Document({
+        sections: [{
+            children: [
+                // RECIPIENT SECTION
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 600 }, 
+                    children: [new TextRun('RECIPIENT')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('Recipient Name\t: Mr. sheshadri')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('Age\t\t\t: 69')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('Sex\t\t\t: Male')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('Identification marks')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('\t1. ')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 300 },
+                    children: [new TextRun('\t2. ')],
+                }),
+                
+                // DONOR SECTION
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 600 },
+                    children: [new TextRun('DONOR')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('Donor Name\t\t: Mr. MYILRAJ')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('Age\t\t\t: 36')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('Sex\t\t\t: Male')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('Identification marks')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('\t1. ')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 300 },
+                    children: [new TextRun('\t2. ')],
+                }),
+                
+                // DONOR DEPENDENT SECTION
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 600 },
+                    children: [new TextRun('DONOR DEPENDENT')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('Dependent Name\t: Mrs. SAYIDHA S')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('Age\t\t\t: 39')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('Sex\t\t\t: Female')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('Identification marks')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 100 },
+                    children: [new TextRun('\t1. ')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 300 },
+                    children: [new TextRun('\t2. ')],
+                }),
+
+                // DOCTOR'S DETAILS
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 600 },
+                    children: [
+                        new TextRun({
+                            text: 'Dr. Appan Prakash  MD., DM., Nephrology\nStar Kims Hospital, Tiruchirappalli.',
+                            bold: true,
+                        }),
+                    ],
+                }),
+            ],
+        }],
+    });
+
+    Packer.toBlob(doc).then((blob) => {
+        saveAs(blob, "identification_marks.docx");
+    });
+};
+
+
+
+const form_annexure = () => {
+    const doc = new Document({
+        sections: [{
+            children: [
+                // ANNEXURE I
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 600, after: 300 },
+                    children: [new TextRun('ANNEXURE – I')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('Patient and Donor Photos: -'),
+                        new TextRun('\n\n\n\n\n\n'),
+                        new TextRun('[INSERT PHOTO HERE - Patient]\n'),
+                        new TextRun('[INSERT PHOTO HERE - Donor]\n'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('Donor and Donor Dependent Photos: -'),
+                        new TextRun('\n\n\n\n\n\n'),
+                        new TextRun('[INSERT PHOTO HERE - Donor]\n'),
+                        new TextRun('[INSERT PHOTO HERE - Donor Dependent]\n'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('Common Picture taken at any family function'),
+                        new TextRun('\n\n\n\n\n'),
+                        new TextRun('[INSERT PHOTO HERE - Family Function]\n'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 600, after: 300 },
+                    children: [new TextRun('ANNEXURE – II')],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('Name of the Medical Superintendent\t:  	Dr.RajaRathinam\n'),
+                        new TextRun('\t\t\t\t\t\tM.Ch(SGE),MRCS(Edin)\n'),
+                        new TextRun('\t\t\t\t\t\tDirector- Medical Services\t\t\tStar Kims Hospital,Tiruchirappalli\n\n'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('Name of the Transplant Surgeon\t:  	Dr.Suresh Bhalaji,\tMs.,,Mch.,,\n'),
+                        new TextRun('\t\t\t\t\t\tUrologist Consultant-Transplant Surgeon\n'),
+                        new TextRun('\t\t\t\t\t\tStar Kims Hospital,Tiruchirappalli\n\n'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('Name of the Nephrologist\t\t:	Dr.  Appan Prakash, MD.,DM.,,\n'),
+                        new TextRun('\t\t\t\t\t\tNephrology\n'),
+                        new TextRun('\t\t\t\t\t\tStar Kims Hospital,Tiruchirappalli\n'),
+                    ],
+                }),
+            ],
+        }],
+    });
+
+    Packer.toBlob(doc).then((blob) => {
+        saveAs(blob, "annexure.docx");
+    });
+};
+
+
+
+
+const form_certification = () => {
+    const doc = new Document({
+        sections: [{
+            children: [
+                // Salutation
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { before: 400, after: 200 },
+                    children: [new TextRun('TO WHOM IT MAY CONCERN')],
+                }),
+
+                // Body Content
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun(`This is to certify that the patient Mr. Parishkan, aged 27 years, `),
+                        new TextRun('undefined undefined'),
+                        new TextRun(` and the Donor Ms. Umalfathima, aged 31 years S/O AKBAR ALI who is "Niece & Niece" to the Patient `),
+                        new TextRun('is found medically fit for the renal replacement therapy. ')
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('We are submitting all the documents required by the authorization committee for the approval for the above patient to undergo kidney transplantation in this hospital.\n\n')
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('We certify that, the furnished documents have been verified and found to be genuine. If anything is found wrong by the authorities concerned at a later date, the hospital will be held responsible for the negligence. ')
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('Appropriate legal proceedings will be prosecuted against the doctors signed below, the hospital at which the surgery is performed, and also against the erring personnel who prepared the documents by the competent authorities for sending forged documents.')
+                    ],
+                }),
+
+                // Signature Section
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { before: 600, after: 300 },
+                    children: [
+                        new TextRun('Signature of treating\t\t\tSignature of Operating\t\tSignature of Authorized'),
+                        new TextRun('\nNephrologist\t\t\t\tTransplant Surgeon\t\tSignatory of the Hospital'),
+                        new TextRun('\n(With Name & Seal)\t\t(With Name & Seal)\t\t(With Name & Seal)')
+                    ],
+                }),
+            ],
+        }],
+    });
+
+    Packer.toBlob(doc).then((blob) => {
+        saveAs(blob, "transplant_certification.docx");
+    });
+};
+
+
+
+const form_checklist = () => {
+    const doc = new Document({
+        sections: [{
+            children: [
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { before: 700, after: 300 },
+                    children: [
+                        new TextRun({
+                            text: 'CHECKLIST TO BE ACCOMPANIED ALONG WITH THE APPLICATION SEEKING PERMISSION FOR RENAL TRANSPLANTATION',
+                            bold: true,
+                        }),
+                        new TextRun('\nD.M.E.Ref.No.39200/H&DI1/4/2023, DATED.28.04.2023'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 300 },
+                    children: [
+                        new TextRun('S.NO\tPARTICULARS\t\tREQUIRED\t\tPAGE NO'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('1\tForm -1\t\t\t\tYes\t\t\t\t'),
+                        new TextRun('\tFor organ donation from'),
+                        new TextRun('\tidentified living near related donor (As per H.O.T.Act)'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('2\tForm -2\t\t\t\tYes\t\t\t\t'),
+                        new TextRun('\tFor organ donation by living spousal donor (As per H.O.T.Act)'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('3\tForm -3\t\t\t\tYes\t\t\t\t'),
+                        new TextRun('\tFor organ donation by other than near relative living donor (As per H.O.T.Act)'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('4\tForm -4\t\t\t\tYes\t\t\t\t'),
+                        new TextRun('\tFor certification of medical fitness of living donor (To be given by the Registered Medical Practitioner)'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('5\tForm -5\t\t\t\tYes\t\t\t\t'),
+                        new TextRun('\tFor certification of genetic relationship of living donor with recipient(To be filled by the head of Pathology Laboratory certifying relationship)'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('6\tForm -6\t\t\t\tYes\t\t\t\t'),
+                        new TextRun('\tFor Spousal living donor ( in case of foreigners )'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('7\tForm -11\t\t\tYes\t\t\t\t'),
+                        new TextRun('\tApplication for approval of Transplantation from living Donor'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('8\tForm -20\t\t\tYes\t\t\t\t'),
+                        new TextRun('\tVerification certificate in respect of domicile status of recipient or donor'),
+                        new TextRun('\t(required only for the donor - other than near relative or recipient if they do not belong to the state where transplant hospital identified for operation is located)'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('9\tForm -21\t\t\tYes\t\t\t\t'),
+                        new TextRun('\tCertificate of relationship between donor and recipient in case of foreigners'),
+                        new TextRun('\t(To be issued by the Embassy concerned)'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('10\tHLA Test - Report\tYes\t\t\t\t'),
+                        new TextRun('\tReport to be submitted in respect of Blood related donor (As per H.O.T. Act)'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('11\tIdentification Marks\tYes\t\t\t\t'),
+                        new TextRun('\t1.Patient'),
+                        new TextRun('\t2.Donor'),
+                        new TextRun('\t3.Donor’s Spouse or Dependents'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('12\tDeclaration from the Doctor Concerned\tYes\t\t\t\t'),
+                        new TextRun('\t1. To the Effect that All the Post-Operative Complications have Explained in detail to the patient, Donor and Donor Spouse or Dependent in their Mother Tongue Explaining all the consequences'),
+                        new TextRun('\n\t2. Declaration from the Patient , Donor & Donor’s Spouse or Dependent stating that All the Pos -Operative Complications have been Explained to them by the Doctor Concerned to their full understanding'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('13\tA copy of current Registration Certificate\tYes\t\t\t'),
+                        new TextRun('\tIssued by the Appropriate Authority for Human Organ Transplantation Act and Director of Medical And Rural Health Services, Chennai'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('14\tProof of Nativity\tYes\t\t\t\t'),
+                        new TextRun('\t1.The Patient and Donors should Submit their Identity Card such as Ration Card, Election Identity Card, Passport , Bank PassBook with three years transaction etc., to prove their Nativity.'),
+                        new TextRun('\t2.   The Above proof should be attested by a Notary Public'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('15\tTamil Nadu\tYes\t\t\t\t'),
+                        new TextRun('\t1. Original Affidavit in  Mother tongue of the Patient duly signed in the presence of the Magistrate with translation in English duly attested by a Notary Public'),
+                        new TextRun('\n\t2. Original Affidavit in  Mother tongue of the Donor duly signed in the presence of the Magistrate with translation in English duly attested by a Notary Public'),
+                        new TextRun('\n\t3. Original Affidavit in  Mother tongue of the Spouse in case of married donor’s and from parents/ dependents in case of un married donor’s duly  signed in the presence of the Magistrate with translation in English duly attested by a Notary Public'),
+                        new TextRun('\n\t4. Two Witness Signature & Address should be affixed in the All affidavits'),
+                        new TextRun('\n\t5. Relations Ship Certificate from Revenue Authority ( Thasildhar / Deputy Thasildhar )'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('16\tOther State\tYes\t\t\t\t'),
+                        new TextRun('\t1.  The No Objection Certificate from Authorization Committee governing of their area'),
+                        new TextRun('\t2. Where there is no Authorization Committee, the Director of Medical Education, Director of Health Services of the state concerned should certify that there is no Authorization Committee in the state and the Directorate has no objection for the patient and donor to have Liver  transplantation in the place of their wish.'),
+                        new TextRun('\n\t3. Original Affidavit in  Mother tongue of the Patient duly affixing his/ her photograph and signed in the presence of the Magistrate from their Native place  with translation in English duly attested by a Notary Public'),
+                        new TextRun('\n\t4. Original Affidavit in  Mother tongue of the Donor duly affixing his/ her photograph and signed in the presence of the Magistrate from their Native place  with translation in English duly attested by a Notary Public'),
+                        new TextRun('\n\t5.  Original Affidavit in  Mother Tongue  of the Spouse in case of married   donor’s and from parents/ dependents in case of un married  donor’s duly  affixing his/ her photograph and signed in the presence of the Magistrate in their  native place with translation in English duly attested by a Notary Public'),
+                        new TextRun('\n\t6. Two Witness Signature & Address      should be affixed in the All affidavits'),
+                        new TextRun('\n\t7.  Relations Ship Certificate from Revenue Authority ( Thasildhar / Deputy Thasildhar )'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('17\tOther Countries\tYes\t\t\t\t'),
+                        new TextRun('\t1. Valid passport, Visa, High Commission Embassy letters'),
+                        new TextRun('\t2. Original Affidavit from the Patient, Donor & Donor Spouse / Guardian  duly affixing his/ her photograph and signed by the competent authority in their Native'),
+                        new TextRun('\t3. Relation Ship Certificate from the High Commission/ Embassy'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('18\tAnnexure – 1\t\tYes\t\t\t\t'),
+                        new TextRun('\t1.Patient and Donor’s ( Joint Photograph )'),
+                        new TextRun('\n\t2. Donor and Donor’s Spouse ( Joint Photograph )'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.LEFT,
+                    spacing: { after: 200 },
+                    children: [
+                        new TextRun('19\tAnnexure – 2\t\tYes\t\t\t\t'),
+                        new TextRun('\t1.Name of the Managing Director /  Medical Superintendent'),
+                        new TextRun('\n\t2.Name of the Nephrologist'),
+                        new TextRun('\n\t3.Name of Urologist'),
+                        new TextRun('\n\t4.Name of the Transplant  Surgeons'),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 600, after: 300 },
+                    children: [
+                        new TextRun('Signature of treating\t\t\tSignature of Operating\t\tSignature of Authorized'),
+                        new TextRun('\nNephrologist\t\t\t\tTransplant Surgeon\t\tSignatory of the Hospital'),
+                        new TextRun('\n(With Name & Seal)\t\t(With Name & Seal)\t\t(With Name & Seal)'),
+                    ],
+                }),
+            ],
+        }],
+    });
+
+    Packer.toBlob(doc).then((blob) => {
+        saveAs(blob, "transplant_checklist.docx");
+    });
+};
 
 
 
@@ -5301,9 +6708,9 @@ export const OrganDonationForm = () => {
   // Generate the form with user data
   // Form_four(userData);
   const handleClick = () => {
-    // Doner_defendent_affiliate_tamil()
-    // doner_affidavi_Tamil()
-    patient_affidavi_Tamil()
+    // form_declaration()
+    // form_identification_marks()
+    form_checklist()
   }
   return (
     <button
